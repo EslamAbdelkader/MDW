@@ -14,11 +14,17 @@
 		4C1E5DFA1E9E248500760766 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C1E5DF81E9E248500760766 /* Main.storyboard */; };
 		4C1E5DFC1E9E248500760766 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C1E5DFB1E9E248500760766 /* Assets.xcassets */; };
 		4C1E5DFF1E9E248500760766 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C1E5DFD1E9E248500760766 /* LaunchScreen.storyboard */; };
+		CC2B392A1E9FE54A0099EEE9 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2B39291E9FE54A0099EEE9 /* SWRevealViewController.m */; };
+		CC2B392D1E9FEC790099EEE9 /* SidebarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2B392C1E9FEC790099EEE9 /* SidebarTableViewController.m */; };
+		CC6D930C1EA2281800361E83 /* AgendaTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6D930B1EA2281800361E83 /* AgendaTabBarController.m */; };
+		CC6D930E1EA22B0300361E83 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6D930D1EA22B0300361E83 /* menu.png */; };
+		CCA77D581EA0AF74005C498E /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA77D571EA0AF74005C498E /* ProfileViewController.m */; };
+		CCA77D5E1EA0BAF7005C498E /* SpeakersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA77D5D1EA0BAF7005C498E /* SpeakersViewController.m */; };
+		CCA77D611EA0BC30005C498E /* ExhibitorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA77D601EA0BC30005C498E /* ExhibitorsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		32F72EE83A9F9EE57C4F6BF8 /* libPods-MDW.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MDW.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4C1E5DEC1E9E248500760766 /* MDW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MDW.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C1E5DF01E9E248500760766 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4C1E5DF21E9E248500760766 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4C1E5DF31E9E248500760766 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -29,6 +35,20 @@
 		4C1E5DFE1E9E248500760766 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C1E5E001E9E248500760766 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74FD82C09B21E6B286D628CE /* Pods-MDW.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MDW.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MDW/Pods-MDW.debug.xcconfig"; sourceTree = "<group>"; };
+		CC2B39281E9FE54A0099EEE9 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		CC2B39291E9FE54A0099EEE9 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		CC2B392B1E9FEC790099EEE9 /* SidebarTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SidebarTableViewController.h; path = ../SidebarTableViewController.h; sourceTree = "<group>"; };
+		CC2B392C1E9FEC790099EEE9 /* SidebarTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SidebarTableViewController.m; path = ../SidebarTableViewController.m; sourceTree = "<group>"; };
+		CC6D93061EA2198400361E83 /* MDW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MDW.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC6D930A1EA2281800361E83 /* AgendaTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgendaTabBarController.h; sourceTree = "<group>"; };
+		CC6D930B1EA2281800361E83 /* AgendaTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgendaTabBarController.m; sourceTree = "<group>"; };
+		CC6D930D1EA22B0300361E83 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
+		CCA77D561EA0AF74005C498E /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileViewController.h; path = ../ProfileViewController.h; sourceTree = "<group>"; };
+		CCA77D571EA0AF74005C498E /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileViewController.m; path = ../ProfileViewController.m; sourceTree = "<group>"; };
+		CCA77D5C1EA0BAF7005C498E /* SpeakersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakersViewController.h; sourceTree = "<group>"; };
+		CCA77D5D1EA0BAF7005C498E /* SpeakersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakersViewController.m; sourceTree = "<group>"; };
+		CCA77D5F1EA0BC30005C498E /* ExhibitorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExhibitorsViewController.h; sourceTree = "<group>"; };
+		CCA77D601EA0BC30005C498E /* ExhibitorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExhibitorsViewController.m; sourceTree = "<group>"; };
 		F5476FF75C776BDD8834B3C3 /* Pods-MDW.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MDW.release.xcconfig"; path = "Pods/Target Support Files/Pods-MDW/Pods-MDW.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -48,23 +68,17 @@
 			isa = PBXGroup;
 			children = (
 				4C1E5DEE1E9E248500760766 /* MDW */,
-				4C1E5DED1E9E248500760766 /* Products */,
 				D1C2E792295D0903945D9849 /* Pods */,
 				FB169CABE6D532C996176D07 /* Frameworks */,
+				CC6D93061EA2198400361E83 /* MDW.app */,
 			);
-			sourceTree = "<group>";
-		};
-		4C1E5DED1E9E248500760766 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				4C1E5DEC1E9E248500760766 /* MDW.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		4C1E5DEE1E9E248500760766 /* MDW */ = {
 			isa = PBXGroup;
 			children = (
+				CC6D930D1EA22B0300361E83 /* menu.png */,
+				CC2B39251E9FE4980099EEE9 /* SWRevealViewController */,
 				4C1E5DF21E9E248500760766 /* AppDelegate.h */,
 				4C1E5DF31E9E248500760766 /* AppDelegate.m */,
 				4C1E5DF51E9E248500760766 /* ViewController.h */,
@@ -73,6 +87,16 @@
 				4C1E5DFB1E9E248500760766 /* Assets.xcassets */,
 				4C1E5DFD1E9E248500760766 /* LaunchScreen.storyboard */,
 				4C1E5E001E9E248500760766 /* Info.plist */,
+				CC6D930A1EA2281800361E83 /* AgendaTabBarController.h */,
+				CC6D930B1EA2281800361E83 /* AgendaTabBarController.m */,
+				CCA77D561EA0AF74005C498E /* ProfileViewController.h */,
+				CCA77D571EA0AF74005C498E /* ProfileViewController.m */,
+				CC2B392B1E9FEC790099EEE9 /* SidebarTableViewController.h */,
+				CC2B392C1E9FEC790099EEE9 /* SidebarTableViewController.m */,
+				CCA77D5C1EA0BAF7005C498E /* SpeakersViewController.h */,
+				CCA77D5D1EA0BAF7005C498E /* SpeakersViewController.m */,
+				CCA77D5F1EA0BC30005C498E /* ExhibitorsViewController.h */,
+				CCA77D601EA0BC30005C498E /* ExhibitorsViewController.m */,
 				4C1E5DEF1E9E248500760766 /* Supporting Files */,
 			);
 			path = MDW;
@@ -84,6 +108,15 @@
 				4C1E5DF01E9E248500760766 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CC2B39251E9FE4980099EEE9 /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CC2B39281E9FE54A0099EEE9 /* SWRevealViewController.h */,
+				CC2B39291E9FE54A0099EEE9 /* SWRevealViewController.m */,
+			);
+			name = SWRevealViewController;
 			sourceTree = "<group>";
 		};
 		D1C2E792295D0903945D9849 /* Pods */ = {
@@ -123,7 +156,7 @@
 			);
 			name = MDW;
 			productName = MDW;
-			productReference = 4C1E5DEC1E9E248500760766 /* MDW.app */;
+			productReference = CC6D93061EA2198400361E83 /* MDW.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -137,6 +170,7 @@
 				TargetAttributes = {
 					4C1E5DEB1E9E248500760766 = {
 						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = 5CZHR7V39M;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -150,7 +184,7 @@
 				Base,
 			);
 			mainGroup = 4C1E5DE31E9E248500760766;
-			productRefGroup = 4C1E5DED1E9E248500760766 /* Products */;
+			productRefGroup = 4C1E5DE31E9E248500760766;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -164,6 +198,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC6D930E1EA22B0300361E83 /* menu.png in Resources */,
 				4C1E5DFF1E9E248500760766 /* LaunchScreen.storyboard in Resources */,
 				4C1E5DFC1E9E248500760766 /* Assets.xcassets in Resources */,
 				4C1E5DFA1E9E248500760766 /* Main.storyboard in Resources */,
@@ -225,9 +260,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC2B392D1E9FEC790099EEE9 /* SidebarTableViewController.m in Sources */,
+				CC6D930C1EA2281800361E83 /* AgendaTabBarController.m in Sources */,
+				CCA77D5E1EA0BAF7005C498E /* SpeakersViewController.m in Sources */,
 				4C1E5DF71E9E248500760766 /* ViewController.m in Sources */,
 				4C1E5DF41E9E248500760766 /* AppDelegate.m in Sources */,
 				4C1E5DF11E9E248500760766 /* main.m in Sources */,
+				CCA77D611EA0BC30005C498E /* ExhibitorsViewController.m in Sources */,
+				CCA77D581EA0AF74005C498E /* ProfileViewController.m in Sources */,
+				CC2B392A1E9FE54A0099EEE9 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,10 +389,14 @@
 			baseConfigurationReference = 74FD82C09B21E6B286D628CE /* Pods-MDW.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MDW/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = JETS.MDW;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -360,10 +405,15 @@
 			baseConfigurationReference = F5476FF75C776BDD8834B3C3 /* Pods-MDW.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MDW/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = JETS.MDW;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -386,6 +436,7 @@
 				4C1E5E051E9E248500760766 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
