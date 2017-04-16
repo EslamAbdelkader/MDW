@@ -3,5 +3,6 @@
 
 target 'MDW' do
   pod 'AFNetworking', '~> 3.0'
+  pod 'Realm' , '~> 2.3.0’
 
 end

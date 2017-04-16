@@ -715,6 +715,16 @@ const int FrontViewPositionNone = 0xff;
     [self _setFrontViewPosition:initialPosition withDuration:0.0];
 }
 
+-(void) viewDidLoad{
+    [super viewDidLoad];
+    [self.storyboard instantiateViewControllerWithIdentifier:@"revealController"];
+    
+    UIImageView *bgImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"leftSideMenuBackground"]];
+    bgImageView.frame = self.view.bounds;
+    [self.view addSubview:bgImageView];
+    [self.view sendSubviewToBack:bgImageView];
+}
+
 
 - (void)viewDidAppear:(BOOL)animated
 {

@@ -23,6 +23,11 @@
         [self.sidebarButton setTarget: self.revealViewController];
         [self.sidebarButton setAction: @selector( revealToggle: )];
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+        
+        UIImageView *bgImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background"]];
+        bgImageView.frame = self.view.bounds;
+        [self.view addSubview:bgImageView];
+        [self.view sendSubviewToBack:bgImageView];
     }
 }
 

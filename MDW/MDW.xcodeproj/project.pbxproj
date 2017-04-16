@@ -17,7 +17,14 @@
 		CC2B392A1E9FE54A0099EEE9 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2B39291E9FE54A0099EEE9 /* SWRevealViewController.m */; };
 		CC2B392D1E9FEC790099EEE9 /* SidebarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2B392C1E9FEC790099EEE9 /* SidebarTableViewController.m */; };
 		CC6D930C1EA2281800361E83 /* AgendaTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6D930B1EA2281800361E83 /* AgendaTabBarController.m */; };
-		CC6D930E1EA22B0300361E83 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6D930D1EA22B0300361E83 /* menu.png */; };
+		CC94D94E1EA375480007B87E /* AgendaDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = CC94D9431EA375480007B87E /* AgendaDTO.m */; };
+		CC94D94F1EA375480007B87E /* AttendeeDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = CC94D9451EA375480007B87E /* AttendeeDTO.m */; };
+		CC94D9501EA375480007B87E /* DBHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = CC94D9471EA375480007B87E /* DBHandler.m */; };
+		CC94D9511EA375480007B87E /* ExhibitorDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = CC94D9491EA375480007B87E /* ExhibitorDTO.m */; };
+		CC94D9521EA375480007B87E /* SessionDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = CC94D94B1EA375480007B87E /* SessionDTO.m */; };
+		CC94D9531EA375480007B87E /* SpeakerDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = CC94D94D1EA375480007B87E /* SpeakerDTO.m */; };
+		CC94D9591EA375840007B87E /* URLProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CC94D9561EA375840007B87E /* URLProvider.m */; };
+		CC94D95A1EA375840007B87E /* WebServiceDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CC94D9581EA375840007B87E /* WebServiceDataProvider.m */; };
 		CCA77D581EA0AF74005C498E /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA77D571EA0AF74005C498E /* ProfileViewController.m */; };
 		CCA77D5E1EA0BAF7005C498E /* SpeakersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA77D5D1EA0BAF7005C498E /* SpeakersViewController.m */; };
 		CCA77D611EA0BC30005C498E /* ExhibitorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA77D601EA0BC30005C498E /* ExhibitorsViewController.m */; };
@@ -42,7 +49,22 @@
 		CC6D93061EA2198400361E83 /* MDW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MDW.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC6D930A1EA2281800361E83 /* AgendaTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgendaTabBarController.h; sourceTree = "<group>"; };
 		CC6D930B1EA2281800361E83 /* AgendaTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgendaTabBarController.m; sourceTree = "<group>"; };
-		CC6D930D1EA22B0300361E83 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
+		CC94D9421EA375480007B87E /* AgendaDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgendaDTO.h; sourceTree = "<group>"; };
+		CC94D9431EA375480007B87E /* AgendaDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgendaDTO.m; sourceTree = "<group>"; };
+		CC94D9441EA375480007B87E /* AttendeeDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttendeeDTO.h; sourceTree = "<group>"; };
+		CC94D9451EA375480007B87E /* AttendeeDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttendeeDTO.m; sourceTree = "<group>"; };
+		CC94D9461EA375480007B87E /* DBHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBHandler.h; sourceTree = "<group>"; };
+		CC94D9471EA375480007B87E /* DBHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBHandler.m; sourceTree = "<group>"; };
+		CC94D9481EA375480007B87E /* ExhibitorDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExhibitorDTO.h; sourceTree = "<group>"; };
+		CC94D9491EA375480007B87E /* ExhibitorDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExhibitorDTO.m; sourceTree = "<group>"; };
+		CC94D94A1EA375480007B87E /* SessionDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionDTO.h; sourceTree = "<group>"; };
+		CC94D94B1EA375480007B87E /* SessionDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionDTO.m; sourceTree = "<group>"; };
+		CC94D94C1EA375480007B87E /* SpeakerDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerDTO.h; sourceTree = "<group>"; };
+		CC94D94D1EA375480007B87E /* SpeakerDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerDTO.m; sourceTree = "<group>"; };
+		CC94D9551EA375840007B87E /* URLProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLProvider.h; sourceTree = "<group>"; };
+		CC94D9561EA375840007B87E /* URLProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLProvider.m; sourceTree = "<group>"; };
+		CC94D9571EA375840007B87E /* WebServiceDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebServiceDataProvider.h; sourceTree = "<group>"; };
+		CC94D9581EA375840007B87E /* WebServiceDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebServiceDataProvider.m; sourceTree = "<group>"; };
 		CCA77D561EA0AF74005C498E /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileViewController.h; path = ../ProfileViewController.h; sourceTree = "<group>"; };
 		CCA77D571EA0AF74005C498E /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileViewController.m; path = ../ProfileViewController.m; sourceTree = "<group>"; };
 		CCA77D5C1EA0BAF7005C498E /* SpeakersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakersViewController.h; sourceTree = "<group>"; };
@@ -77,7 +99,8 @@
 		4C1E5DEE1E9E248500760766 /* MDW */ = {
 			isa = PBXGroup;
 			children = (
-				CC6D930D1EA22B0300361E83 /* menu.png */,
+				CC94D9541EA3755C0007B87E /* Services */,
+				CC94D9411EA374ED0007B87E /* DTOs */,
 				CC2B39251E9FE4980099EEE9 /* SWRevealViewController */,
 				4C1E5DF21E9E248500760766 /* AppDelegate.h */,
 				4C1E5DF31E9E248500760766 /* AppDelegate.m */,
@@ -117,6 +140,36 @@
 				CC2B39291E9FE54A0099EEE9 /* SWRevealViewController.m */,
 			);
 			name = SWRevealViewController;
+			sourceTree = "<group>";
+		};
+		CC94D9411EA374ED0007B87E /* DTOs */ = {
+			isa = PBXGroup;
+			children = (
+				CC94D9421EA375480007B87E /* AgendaDTO.h */,
+				CC94D9431EA375480007B87E /* AgendaDTO.m */,
+				CC94D9441EA375480007B87E /* AttendeeDTO.h */,
+				CC94D9451EA375480007B87E /* AttendeeDTO.m */,
+				CC94D9461EA375480007B87E /* DBHandler.h */,
+				CC94D9471EA375480007B87E /* DBHandler.m */,
+				CC94D9481EA375480007B87E /* ExhibitorDTO.h */,
+				CC94D9491EA375480007B87E /* ExhibitorDTO.m */,
+				CC94D94A1EA375480007B87E /* SessionDTO.h */,
+				CC94D94B1EA375480007B87E /* SessionDTO.m */,
+				CC94D94C1EA375480007B87E /* SpeakerDTO.h */,
+				CC94D94D1EA375480007B87E /* SpeakerDTO.m */,
+			);
+			name = DTOs;
+			sourceTree = "<group>";
+		};
+		CC94D9541EA3755C0007B87E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CC94D9551EA375840007B87E /* URLProvider.h */,
+				CC94D9561EA375840007B87E /* URLProvider.m */,
+				CC94D9571EA375840007B87E /* WebServiceDataProvider.h */,
+				CC94D9581EA375840007B87E /* WebServiceDataProvider.m */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 		D1C2E792295D0903945D9849 /* Pods */ = {
@@ -198,7 +251,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC6D930E1EA22B0300361E83 /* menu.png in Resources */,
 				4C1E5DFF1E9E248500760766 /* LaunchScreen.storyboard in Resources */,
 				4C1E5DFC1E9E248500760766 /* Assets.xcassets in Resources */,
 				4C1E5DFA1E9E248500760766 /* Main.storyboard in Resources */,
@@ -220,7 +272,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		A389A9A8EE3ABAB356DE5C67 /* [CP] Copy Pods Resources */ = {
@@ -260,14 +312,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC94D9521EA375480007B87E /* SessionDTO.m in Sources */,
+				CC94D9511EA375480007B87E /* ExhibitorDTO.m in Sources */,
 				CC2B392D1E9FEC790099EEE9 /* SidebarTableViewController.m in Sources */,
 				CC6D930C1EA2281800361E83 /* AgendaTabBarController.m in Sources */,
+				CC94D9501EA375480007B87E /* DBHandler.m in Sources */,
 				CCA77D5E1EA0BAF7005C498E /* SpeakersViewController.m in Sources */,
+				CC94D9591EA375840007B87E /* URLProvider.m in Sources */,
+				CC94D94F1EA375480007B87E /* AttendeeDTO.m in Sources */,
+				CC94D94E1EA375480007B87E /* AgendaDTO.m in Sources */,
 				4C1E5DF71E9E248500760766 /* ViewController.m in Sources */,
 				4C1E5DF41E9E248500760766 /* AppDelegate.m in Sources */,
+				CC94D9531EA375480007B87E /* SpeakerDTO.m in Sources */,
 				4C1E5DF11E9E248500760766 /* main.m in Sources */,
 				CCA77D611EA0BC30005C498E /* ExhibitorsViewController.m in Sources */,
 				CCA77D581EA0AF74005C498E /* ProfileViewController.m in Sources */,
+				CC94D95A1EA375840007B87E /* WebServiceDataProvider.m in Sources */,
 				CC2B392A1E9FE54A0099EEE9 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
