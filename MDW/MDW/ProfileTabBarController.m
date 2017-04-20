@@ -1,20 +1,20 @@
 //
-//  ProfileViewController.m
+//  ProfileTabBarController.m
 //  MDW
 //
-//  Created by JETS on 4/14/17.
+//  Created by JETS on 4/20/17.
 //  Copyright © 2017 MAD. All rights reserved.
 //
 
-#import "ProfileViewController.h"
+#import "ProfileTabBarController.h"
 #import "SWRevealViewController.h"
 
-@implementation ProfileViewController
-
+@implementation ProfileTabBarController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //Or My Agenda, depending on the segue
     self.title = @"Profile";
     
     SWRevealViewController *revealViewController = self.revealViewController;
@@ -24,16 +24,12 @@
         [self.sidebarButton setAction: @selector( revealToggle: )];
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
         
-        UIImageView *bgImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background"]];
-        bgImageView.frame = self.view.bounds;
-        [self.view addSubview:bgImageView];
-        [self.view sendSubviewToBack:bgImageView];
+//        UIImageView *bgImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background"]];
+//        bgImageView.frame = self.view.bounds;
+//        [self.view addSubview:bgImageView];
+//        [self.view sendSubviewToBack:bgImageView];
     }
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
 
 @end

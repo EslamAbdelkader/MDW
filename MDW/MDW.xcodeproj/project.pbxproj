@@ -25,9 +25,10 @@
 		CC94D9531EA375480007B87E /* SpeakerDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = CC94D94D1EA375480007B87E /* SpeakerDTO.m */; };
 		CC94D9591EA375840007B87E /* URLProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CC94D9561EA375840007B87E /* URLProvider.m */; };
 		CC94D95A1EA375840007B87E /* WebServiceDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CC94D9581EA375840007B87E /* WebServiceDataProvider.m */; };
-		CCA77D581EA0AF74005C498E /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA77D571EA0AF74005C498E /* ProfileViewController.m */; };
 		CCA77D5E1EA0BAF7005C498E /* SpeakersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA77D5D1EA0BAF7005C498E /* SpeakersViewController.m */; };
 		CCA77D611EA0BC30005C498E /* ExhibitorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA77D601EA0BC30005C498E /* ExhibitorsViewController.m */; };
+		CCC3572E1EA865A20057332A /* SpeakerDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC3572D1EA865A20057332A /* SpeakerDetailsViewController.m */; };
+		CCC357311EA867120057332A /* ProfileTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC357301EA867120057332A /* ProfileTabBarController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,12 +66,14 @@
 		CC94D9561EA375840007B87E /* URLProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLProvider.m; sourceTree = "<group>"; };
 		CC94D9571EA375840007B87E /* WebServiceDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebServiceDataProvider.h; sourceTree = "<group>"; };
 		CC94D9581EA375840007B87E /* WebServiceDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebServiceDataProvider.m; sourceTree = "<group>"; };
-		CCA77D561EA0AF74005C498E /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileViewController.h; path = ../ProfileViewController.h; sourceTree = "<group>"; };
-		CCA77D571EA0AF74005C498E /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileViewController.m; path = ../ProfileViewController.m; sourceTree = "<group>"; };
 		CCA77D5C1EA0BAF7005C498E /* SpeakersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakersViewController.h; sourceTree = "<group>"; };
 		CCA77D5D1EA0BAF7005C498E /* SpeakersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakersViewController.m; sourceTree = "<group>"; };
 		CCA77D5F1EA0BC30005C498E /* ExhibitorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExhibitorsViewController.h; sourceTree = "<group>"; };
 		CCA77D601EA0BC30005C498E /* ExhibitorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExhibitorsViewController.m; sourceTree = "<group>"; };
+		CCC3572C1EA865A20057332A /* SpeakerDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerDetailsViewController.h; sourceTree = "<group>"; };
+		CCC3572D1EA865A20057332A /* SpeakerDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerDetailsViewController.m; sourceTree = "<group>"; };
+		CCC3572F1EA867120057332A /* ProfileTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileTabBarController.h; sourceTree = "<group>"; };
+		CCC357301EA867120057332A /* ProfileTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileTabBarController.m; sourceTree = "<group>"; };
 		F5476FF75C776BDD8834B3C3 /* Pods-MDW.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MDW.release.xcconfig"; path = "Pods/Target Support Files/Pods-MDW/Pods-MDW.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,12 +115,14 @@
 				4C1E5E001E9E248500760766 /* Info.plist */,
 				CC6D930A1EA2281800361E83 /* AgendaTabBarController.h */,
 				CC6D930B1EA2281800361E83 /* AgendaTabBarController.m */,
-				CCA77D561EA0AF74005C498E /* ProfileViewController.h */,
-				CCA77D571EA0AF74005C498E /* ProfileViewController.m */,
+				CCC3572F1EA867120057332A /* ProfileTabBarController.h */,
+				CCC357301EA867120057332A /* ProfileTabBarController.m */,
 				CC2B392B1E9FEC790099EEE9 /* SidebarTableViewController.h */,
 				CC2B392C1E9FEC790099EEE9 /* SidebarTableViewController.m */,
 				CCA77D5C1EA0BAF7005C498E /* SpeakersViewController.h */,
 				CCA77D5D1EA0BAF7005C498E /* SpeakersViewController.m */,
+				CCC3572C1EA865A20057332A /* SpeakerDetailsViewController.h */,
+				CCC3572D1EA865A20057332A /* SpeakerDetailsViewController.m */,
 				CCA77D5F1EA0BC30005C498E /* ExhibitorsViewController.h */,
 				CCA77D601EA0BC30005C498E /* ExhibitorsViewController.m */,
 				4C1E5DEF1E9E248500760766 /* Supporting Files */,
@@ -319,6 +324,7 @@
 				CC94D9501EA375480007B87E /* DBHandler.m in Sources */,
 				CCA77D5E1EA0BAF7005C498E /* SpeakersViewController.m in Sources */,
 				CC94D9591EA375840007B87E /* URLProvider.m in Sources */,
+				CCC357311EA867120057332A /* ProfileTabBarController.m in Sources */,
 				CC94D94F1EA375480007B87E /* AttendeeDTO.m in Sources */,
 				CC94D94E1EA375480007B87E /* AgendaDTO.m in Sources */,
 				4C1E5DF71E9E248500760766 /* ViewController.m in Sources */,
@@ -326,7 +332,7 @@
 				CC94D9531EA375480007B87E /* SpeakerDTO.m in Sources */,
 				4C1E5DF11E9E248500760766 /* main.m in Sources */,
 				CCA77D611EA0BC30005C498E /* ExhibitorsViewController.m in Sources */,
-				CCA77D581EA0AF74005C498E /* ProfileViewController.m in Sources */,
+				CCC3572E1EA865A20057332A /* SpeakerDetailsViewController.m in Sources */,
 				CC94D95A1EA375840007B87E /* WebServiceDataProvider.m in Sources */,
 				CC2B392A1E9FE54A0099EEE9 /* SWRevealViewController.m in Sources */,
 			);
