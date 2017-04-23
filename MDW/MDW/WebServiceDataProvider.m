@@ -15,6 +15,7 @@
 #import "ExhibitorDTO.h"
 #import "AttendeeDTO.h"
 #import "DBHandler.h"
+#import "SWRevealViewController.h"
 
 @implementation WebServiceDataProvider
 +(void)getAgendasIntoViewController: (id<ViewControllerDelegate>) viewController {
@@ -25,10 +26,13 @@
     //Change Mail To User Mail From NSUserDefaults
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSData* userData = [userDefaults objectForKey:@"user"];
-    AttendeeDTO* user = [NSKeyedUnarchiver unarchiveObjectWithData:userData];
-    NSString* email = user.email;
+    NSDictionary* user = [NSKeyedUnarchiver unarchiveObjectWithData:userData];
+    NSLog(@"%@",user);
+    NSLog(@"%@",[user objectForKey:@"email"]);
     
+    NSString* email = [user objectForKey:@"email"];
     
+    NSLog(@"email is %@",email);
     NSURLRequest *request = [URLProvider getSessionsRequestByUsername:email];
     
     NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
@@ -104,6 +108,7 @@
                         
                         [agendaDTO.sessions addObject:sessionDTO];
                         [agendaDTOS addObject:agendaDTO];
+                        NSLog(@"%d",agendaDTOS.count);
                         
                         //                        NSLog(@"---------------- no.ofsessions inside is %lu", (unsigned long)[sessions count]);
                         
@@ -114,7 +119,7 @@
                 //            for (SessionDTO * ses in sessions) {
                 //                [ses printOject];
                 //            }
-               
+                
                 //TODO (DONE - NOT Tested)
                 //Save agendaDTOS in DB
                 DBHandler *dbHandler = [DBHandler getDB];
@@ -122,7 +127,9 @@
                 
                 //Replace array with agendaDTOS
                 //Refresh Table
-                [viewController refreshTableUsingArray:agendaDTOS];
+                if(viewController){
+                    [viewController refreshTableUsingArray:agendaDTOS];
+                }
                 
             }else{
                 //Status = view.failed
@@ -186,7 +193,7 @@
                 //Add Objects in DB
                 DBHandler *dbHandler = [DBHandler new];
                 [dbHandler addOrUpdateSpeakers:speakers];
-
+                
                 //Refresh Array, Reload Table.
                 [viewController refreshTableUsingArray:speakers];
                 
@@ -287,9 +294,18 @@
                 [userDefaults setObject:userData forKey:@"user"];
                 [userDefaults synchronize];
                 
+                //Getting Agendas
+                [self getAgendasIntoViewController:nil];
+                
                 //TODO
                 //Dissmiss current viewController
                 //push Home view controller
+                
+                UIViewController *myViewController = (UIViewController*) viewController;
+                SWRevealViewController *vc = [myViewController.storyboard instantiateViewControllerWithIdentifier:@"revealController"];
+                
+                
+                [myViewController presentViewController:vc animated:YES completion:nil];
                 
             }else{
                 //Status = view.failed

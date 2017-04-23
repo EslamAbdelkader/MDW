@@ -12,4 +12,8 @@
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 
+@property NSMutableArray *agendas;
+
+@property NSString *myTitle;
+
 @end

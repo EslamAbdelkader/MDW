@@ -29,6 +29,9 @@
 		CCAFD2611EACC3CE002C2547 /* ExhibitorDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = CCAFD25A1EACC3CE002C2547 /* ExhibitorDTO.m */; };
 		CCAFD2621EACC3CE002C2547 /* SessionDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = CCAFD25C1EACC3CE002C2547 /* SessionDTO.m */; };
 		CCAFD2631EACC3CE002C2547 /* SpeakerDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = CCAFD25E1EACC3CE002C2547 /* SpeakerDTO.m */; };
+		CCAFD2661EACE885002C2547 /* ProfileInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCAFD2651EACE885002C2547 /* ProfileInfoViewController.m */; };
+		CCAFD2691EACE8C4002C2547 /* ProfileTicketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCAFD2681EACE8C4002C2547 /* ProfileTicketViewController.m */; };
+		CCAFD26C1EACE8E5002C2547 /* ProfileContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCAFD26B1EACE8E5002C2547 /* ProfileContactsViewController.m */; };
 		CCC3572E1EA865A20057332A /* SpeakerDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC3572D1EA865A20057332A /* SpeakerDetailsViewController.m */; };
 		CCC357311EA867120057332A /* ProfileTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC357301EA867120057332A /* ProfileTabBarController.m */; };
 /* End PBXBuildFile section */
@@ -77,6 +80,12 @@
 		CCAFD25C1EACC3CE002C2547 /* SessionDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionDTO.m; sourceTree = "<group>"; };
 		CCAFD25D1EACC3CE002C2547 /* SpeakerDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerDTO.h; sourceTree = "<group>"; };
 		CCAFD25E1EACC3CE002C2547 /* SpeakerDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerDTO.m; sourceTree = "<group>"; };
+		CCAFD2641EACE885002C2547 /* ProfileInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileInfoViewController.h; sourceTree = "<group>"; };
+		CCAFD2651EACE885002C2547 /* ProfileInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileInfoViewController.m; sourceTree = "<group>"; };
+		CCAFD2671EACE8C4002C2547 /* ProfileTicketViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileTicketViewController.h; sourceTree = "<group>"; };
+		CCAFD2681EACE8C4002C2547 /* ProfileTicketViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileTicketViewController.m; sourceTree = "<group>"; };
+		CCAFD26A1EACE8E5002C2547 /* ProfileContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileContactsViewController.h; sourceTree = "<group>"; };
+		CCAFD26B1EACE8E5002C2547 /* ProfileContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileContactsViewController.m; sourceTree = "<group>"; };
 		CCC3572C1EA865A20057332A /* SpeakerDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerDetailsViewController.h; sourceTree = "<group>"; };
 		CCC3572D1EA865A20057332A /* SpeakerDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerDetailsViewController.m; sourceTree = "<group>"; };
 		CCC3572F1EA867120057332A /* ProfileTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileTabBarController.h; sourceTree = "<group>"; };
@@ -99,10 +108,10 @@
 		4C1E5DE31E9E248500760766 = {
 			isa = PBXGroup;
 			children = (
-				4C1E5DEE1E9E248500760766 /* MDW */,
-				D1C2E792295D0903945D9849 /* Pods */,
 				FB169CABE6D532C996176D07 /* Frameworks */,
+				4C1E5DEE1E9E248500760766 /* MDW */,
 				CC6D93061EA2198400361E83 /* MDW.app */,
+				D1C2E792295D0903945D9849 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -212,8 +221,14 @@
 		CCAFD2451EAC910E002C2547 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				CCAFD2641EACE885002C2547 /* ProfileInfoViewController.h */,
+				CCAFD2651EACE885002C2547 /* ProfileInfoViewController.m */,
 				CCC3572F1EA867120057332A /* ProfileTabBarController.h */,
 				CCC357301EA867120057332A /* ProfileTabBarController.m */,
+				CCAFD2671EACE8C4002C2547 /* ProfileTicketViewController.h */,
+				CCAFD2681EACE8C4002C2547 /* ProfileTicketViewController.m */,
+				CCAFD26A1EACE8E5002C2547 /* ProfileContactsViewController.h */,
+				CCAFD26B1EACE8E5002C2547 /* ProfileContactsViewController.m */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -380,11 +395,14 @@
 				CCAFD24D1EACC1D2002C2547 /* DBHandler.m in Sources */,
 				CC2B392D1E9FEC790099EEE9 /* SidebarTableViewController.m in Sources */,
 				CC6D930C1EA2281800361E83 /* AgendaTabBarController.m in Sources */,
+				CCAFD2661EACE885002C2547 /* ProfileInfoViewController.m in Sources */,
+				CCAFD2691EACE8C4002C2547 /* ProfileTicketViewController.m in Sources */,
 				CCA77D5E1EA0BAF7005C498E /* SpeakersViewController.m in Sources */,
 				CCC357311EA867120057332A /* ProfileTabBarController.m in Sources */,
 				CCAFD2631EACC3CE002C2547 /* SpeakerDTO.m in Sources */,
 				CCAFD2531EACC20B002C2547 /* WebServiceDataProvider.m in Sources */,
 				CCAFD2621EACC3CE002C2547 /* SessionDTO.m in Sources */,
+				CCAFD26C1EACE8E5002C2547 /* ProfileContactsViewController.m in Sources */,
 				4C1E5DF71E9E248500760766 /* ViewController.m in Sources */,
 				4C1E5DF41E9E248500760766 /* AppDelegate.m in Sources */,
 				CCAFD2521EACC20B002C2547 /* URLProvider.m in Sources */,

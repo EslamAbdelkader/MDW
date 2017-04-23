@@ -15,7 +15,7 @@
     [super viewDidLoad];
     
     //Or My Agenda, depending on the segue
-    self.title = @"Agenda";
+    self.title = _myTitle;
     
     SWRevealViewController *revealViewController = self.revealViewController;
     if ( revealViewController )

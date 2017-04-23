@@ -8,6 +8,8 @@
 
 #import "SidebarTableViewController.h"
 #import "SWRevealViewController.h"
+#import "AgendaTabBarController.h"
+#import "DBHandler.h"
 
 @interface SidebarTableViewController ()
 
@@ -70,8 +72,17 @@
     destViewController.title = [[menuItems objectAtIndex:indexPath.row] capitalizedString];
     
     // Prepare all the views with respect to the segue identifier
-    if ([segue.identifier isEqualToString:@""]) {
-        
+    if ([segue.identifier isEqualToString:@"agendaSeg"]) {
+        UINavigationController *navController = segue.destinationViewController;
+        AgendaTabBarController *agendaController = [navController childViewControllers].firstObject;
+        agendaController.title = @"Agenda";
+        agendaController.agendas = [[DBHandler getDB] getAllAgendas];
+    }
+    else if ([segue.identifier isEqualToString:@"myAgendaSeg"]) {
+        UINavigationController *navController = segue.destinationViewController;
+        AgendaTabBarController *agendaController = [navController childViewControllers].firstObject;
+        agendaController.myTitle = @"My Agenda";
+        agendaController.agendas = [[DBHandler getDB] getAllMyAgendas];
     }
 }
 

@@ -9,6 +9,8 @@
 #import "AllDaysViewController.h"
 #import "SessionDTO.h"
 #import "SessionDetailsViewController.h"
+#import "AgendaTabBarController.h"
+#import "AgendaDTO.h"
 
 @implementation AllDaysViewController{
     NSMutableArray *sessionsList;
@@ -20,31 +22,40 @@
     self.title = @"All Days";
     [self.storyboard instantiateViewControllerWithIdentifier:@"allDaysView"];
     
+//    sessionsList = [NSMutableArray new];
+//    SessionDTO *session1 = [SessionDTO new];
+//    session1.startDate = 1460617200000;
+//    session1.endDate = 1460620800000;
+//    //session1.name = @"Keynote Session";
+//    session1.name = @"<Font name=\"verdana\" size=\"4\" color=\"Blue\">Registration</Font>";
+//    session1.location = @"Main Hall";
+//    session1.sessionType = @"Session";
+//    
+//    SessionDTO *session2 = [SessionDTO new];
+//    session2.startDate = 1460617200000;
+//    session2.endDate = 1460620800000;
+//    session2.name = @"Workshop";
+//    session2.location = @"1022";
+//    session2.sessionType = @"Workshop";
+//    
+//    SessionDTO *session3 = [SessionDTO new];
+//    session3.startDate = 1460617200000;
+//    session3.endDate = 1460620800000;
+//    session3.name = @"Break";
+//    session3.sessionType = @"Break";
+//    
+//    [sessionsList addObject:session1];
+//    [sessionsList addObject:session2];
+//    [sessionsList addObject:session3];
+    
     sessionsList = [NSMutableArray new];
-    SessionDTO *session1 = [SessionDTO new];
-    session1.startDate = 1460617200000;
-    session1.endDate = 1460620800000;
-    //session1.name = @"Keynote Session";
-    session1.name = @"<Font name=\"verdana\" size=\"4\" color=\"Blue\">Registration</Font>";
-    session1.location = @"Main Hall";
-    session1.sessionType = @"Session";
     
-    SessionDTO *session2 = [SessionDTO new];
-    session2.startDate = 1460617200000;
-    session2.endDate = 1460620800000;
-    session2.name = @"Workshop";
-    session2.location = @"1022";
-    session2.sessionType = @"Workshop";
+    AgendaTabBarController *tabCont = self.tabBarController;
+    for( AgendaDTO * agenda in tabCont.agendas){
+        [sessionsList addObjectsFromArray:agenda.sessions];
+        
+    }
     
-    SessionDTO *session3 = [SessionDTO new];
-    session3.startDate = 1460617200000;
-    session3.endDate = 1460620800000;
-    session3.name = @"Break";
-    session3.sessionType = @"Break";
-    
-    [sessionsList addObject:session1];
-    [sessionsList addObject:session2];
-    [sessionsList addObject:session3];
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
