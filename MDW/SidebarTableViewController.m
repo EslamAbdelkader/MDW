@@ -89,12 +89,12 @@
     else if ([segue.identifier isEqualToString:@"speakersSeg"]) {
         UINavigationController *navController = segue.destinationViewController;
         SpeakersViewController *speakersController = [navController childViewControllers].firstObject;
-        //speakersController.speakers = [[DBHandler getDB] ];
+        speakersController.speakers = [[DBHandler getDB] getAllSpeakers];
     }
     else if ([segue.identifier isEqualToString:@"exhibitorsSeg"]) {
         UINavigationController *navController = segue.destinationViewController;
         ExhibitorsViewController *exhibitorsController = [navController childViewControllers].firstObject;
-        //exhibitorsController.exhibitors = [[DBHandler getDB] ];
+        exhibitorsController.exhibitors = [[DBHandler getDB] getAllExhibitors];
     }
 }
 

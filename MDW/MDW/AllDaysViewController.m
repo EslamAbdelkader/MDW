@@ -96,7 +96,7 @@
     location.text = currSession.location;
     NSDate *start = [NSDate dateWithTimeIntervalSince1970:currSession.startDate /1000];
     NSDate *end = [NSDate dateWithTimeIntervalSince1970:currSession.endDate / 1000];
-    
+
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"hh:mm a"];
     NSString *formattedStart = [dateFormatter stringFromDate:start];

@@ -8,6 +8,7 @@
 
 #import "ExhibitorsViewController.h"
 #import "SWRevealViewController.h"
+#import "ExhibitorDTO.h"
 
 @implementation ExhibitorsViewController
 
@@ -35,5 +36,33 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return [_exhibitors count];
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ExhibitorCell" forIndexPath:indexPath];
+    
+    ExhibitorDTO *currEx = [_exhibitors objectAtIndex:indexPath.row];
+    
+    UIImageView *img = [cell viewWithTag:1];
+    UILabel *name = [cell viewWithTag:2];
+    
+    //[img setImage:[[UIImage alloc] initwith]];
+
+    return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    //make it open external link
+}
+
+
 
 @end

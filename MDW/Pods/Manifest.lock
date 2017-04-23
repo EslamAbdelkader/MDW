@@ -17,15 +17,20 @@ PODS:
   - Realm (2.3.0):
     - Realm/Headers (= 2.3.0)
   - Realm/Headers (2.3.0)
+  - ZXingObjC (3.2.1):
+    - ZXingObjC/All (= 3.2.1)
+  - ZXingObjC/All (3.2.1)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
   - Realm (~> 2.3.0)
+  - ZXingObjC (~> 3.2.1)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   Realm: 69d7de9aa569a11eed490aaabc8f2109e3985ecf
+  ZXingObjC: bbf7b8f0cf8933fdd33eb4f9f46e22308552869b
 
-PODFILE CHECKSUM: 14e4d84b6bcc0cae0eee66e98dbc7fcb57d49ee5
+PODFILE CHECKSUM: 6edcf974eb79aa92209af1618834c801e21fd0d7
 
 COCOAPODS: 1.2.1

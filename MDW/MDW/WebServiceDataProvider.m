@@ -26,11 +26,11 @@
     //Change Mail To User Mail From NSUserDefaults
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSData* userData = [userDefaults objectForKey:@"user"];
-    NSDictionary* user = [NSKeyedUnarchiver unarchiveObjectWithData:userData];
+    AttendeeDTO* user = [NSKeyedUnarchiver unarchiveObjectWithData:userData];
     NSLog(@"%@",user);
-    NSLog(@"%@",[user objectForKey:@"email"]);
+    NSLog(@"%@",user.email);
     
-    NSString* email = [user objectForKey:@"email"];
+    NSString* email = user.email;
     
     NSLog(@"email is %@",email);
     NSURLRequest *request = [URLProvider getSessionsRequestByUsername:email];
@@ -78,7 +78,7 @@
                             for (NSDictionary * speaker in speakersList) {
                                 
                                 SpeakerDTO * speakerDTO = [SpeakerDTO new];
-                                speakerDTO.id=[speaker objectForKey:@"id"];
+                                speakerDTO.id=[[speaker objectForKey:@"id"]intValue];
                                 speakerDTO.firstName=[speaker objectForKey:@"firstName"];
                                 speakerDTO.middleName=[speaker objectForKey:@"middleName"];
                                 speakerDTO.lastName=[speaker objectForKey:@"lastName"];
@@ -93,13 +93,13 @@
                         
                         
                         
-                        sessionDTO.id = [session objectForKey:@"id"];
+                        sessionDTO.id = [[session objectForKey:@"id"]intValue];
                         sessionDTO.sessionType = [session objectForKey:@"sessionType"];
                         sessionDTO.name = [session objectForKey:@"name"];
                         sessionDTO.location = [session objectForKey:@"location"];
-                        sessionDTO.startDate = [session objectForKey:@"startDate"];
-                        sessionDTO.endDate = [session objectForKey:@"endDate"];
-                        sessionDTO.status = [session objectForKey:@"status"];
+                        sessionDTO.startDate = [[session objectForKey:@"startDate"]longLongValue];
+                        sessionDTO.endDate = [[session objectForKey:@"endDate"]longLongValue];
+                        sessionDTO.status = [[session objectForKey:@"status"]intValue];
                         sessionDTO.desc = [session objectForKey:@"description"];
                         
                         
@@ -234,7 +234,7 @@
                 for (NSDictionary * exhibitor in result) {
                     
                     ExhibitorDTO * exhibitorDTO = [ExhibitorDTO new];
-                    exhibitorDTO.id=[exhibitor objectForKey:@"id"];
+                    exhibitorDTO.id=[[exhibitor objectForKey:@"id"]intValue];
                     exhibitorDTO.email=[exhibitor objectForKey:@"email"];
                     exhibitorDTO.countryName=[exhibitor objectForKey:@"countryName"];
                     exhibitorDTO.cityName=[exhibitor objectForKey:@"cityName"];
@@ -285,7 +285,20 @@
         } else {
             
             if([[responseObject objectForKey:@"status"]isEqualToString:@"view.success"]){
-                AttendeeDTO * user = [responseObject objectForKey:@"result"];
+                NSDictionary *result = [responseObject objectForKey:@"result"];
+                AttendeeDTO * user = [AttendeeDTO new];
+                user.firstName = [result objectForKey:@"firstName"];
+                user.middleName = [result objectForKey:@"middleName"];
+                user.lastName = [result objectForKey:@"lastName"];
+                user.cityName = [result objectForKey:@"cityName"];
+                user.companyName = [result objectForKey:@"companyName"];
+                user.countryName = [result objectForKey:@"countryName"];
+                user.imageURL = [result objectForKey:@"imageURL"];
+                user.email = [result objectForKey:@"email"];
+                user.code = [result objectForKey:@"code"];
+                user.title = [result objectForKey:@"title"];
+                user.gender = [result objectForKey:@"gender"];
+//                user.birthDate = [[result objectForKey:@"birthDate"]longLongValue];
                 NSLog(@"%@",user);
                 
                 //Putting into UserDefaults
@@ -300,6 +313,7 @@
                 //TODO
                 //Dissmiss current viewController
                 //push Home view controller
+                
                 
                 UIViewController *myViewController = (UIViewController*) viewController;
                 SWRevealViewController *vc = [myViewController.storyboard instantiateViewControllerWithIdentifier:@"revealController"];
