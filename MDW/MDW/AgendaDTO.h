@@ -10,7 +10,7 @@
 #import "SessionDTO.h"
 
 @interface AgendaDTO : RLMObject
-@property long date;
+@property long long date;
 //@property Long endDate;
 @property RLMArray<SessionDTO *><SessionDTO> *sessions;
 -(void) print;

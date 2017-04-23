@@ -18,6 +18,7 @@
 @property NSString * companyName;
 @property NSString * companyAbout;
 @property NSString * imageURL;
+@property NSData * image;
 @property NSString * fax;
 @property NSString * contactName;
 @property NSString * contactTitle;

@@ -7,12 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import "ViewControllerDelegate.h"
 
 @interface WebServiceDataProvider : NSObject
-+(void) getAgendas;
-+(void) getSpeakers;
-+(void) getExhibitors;
-+(void) getProfileImage;
-+(void) login;
-+(void) registerSession;
++(void) getAgendasIntoViewController: (id<ViewControllerDelegate>) viewController ;
++(void) getSpeakersIntoViewController: (id<ViewControllerDelegate>) viewController;
++(void) getExhibitorsIntoViewController: (id<ViewControllerDelegate>) viewController;
++(void) setImageFromURLString: (NSString *) url intoImageView: (UIImageView *) imageView andSaveObject: (id) object;
++(void) loginWithUserName: (NSString *) userName andPassword: (NSString *) password andViewController: (id<ViewControllerDelegate>) viewController;
++(void) registerSessionIntoViewController: (id<ViewControllerDelegate>) viewController;
 @end

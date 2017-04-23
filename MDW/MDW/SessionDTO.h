@@ -14,8 +14,8 @@
 @property NSString *sessionType;
 @property NSString *name;
 @property NSString *desc;
-@property long startDate;
-@property long endDate;
+@property long long startDate;
+@property long long endDate;
 @property NSString *location;
 @property BOOL liked;
 @property int status;

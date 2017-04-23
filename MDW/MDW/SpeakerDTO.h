@@ -15,6 +15,7 @@
 @property NSString * middleName;
 @property NSString * lastName;
 @property NSString * imageURL;
+@property NSData * image;
 @property NSString * companyName;
 @property NSString * title;
 @property BOOL gender ;

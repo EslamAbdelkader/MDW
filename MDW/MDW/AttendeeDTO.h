@@ -24,5 +24,5 @@
 @property NSString * imageURL;
 @property NSData * image;
 @property BOOL gender;
-@property long *birthDate;
+@property long long *birthDate;
 @end

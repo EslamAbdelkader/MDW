@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AgendaTabBarController : UITabBarController <UITableViewDelegate, UITableViewDataSource>
+@interface AgendaTabBarController : UITabBarController
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 

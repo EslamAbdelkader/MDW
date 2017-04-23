@@ -11,6 +11,7 @@
 #import "SpeakerDTO.h"
 #import "SessionDTO.h"
 #import "ExhibitorDTO.h"
+#import <UIKit/UIKit.h>
 
 @interface DBHandler : NSObject
 - (id) init __attribute__((unavailable("Must Use Factory Method getDB")));
@@ -20,9 +21,29 @@
 -(void)addOrUpdateSession: (SessionDTO *) session;
 -(void) addOrUpdateSpeaker: (SpeakerDTO *) speaker;
 -(void) addOrUpdateExhibitor: (ExhibitorDTO *) exhibitor;
+
+- (void)addOrUpdateAgendas: (NSArray *) agendas;
+-(void)addOrUpdateSessions: (NSArray *) sessions;
+-(void) addOrUpdateSpeakers: (NSArray *) speakers;
+-(void) addOrUpdateExhibitors: (NSArray *) exhibitors;
+
+
 -(AgendaDTO *) getAgendaByDate: (long) date;
 -(SpeakerDTO *) getSpeakerById: (int) id;
 -(SessionDTO *) getSessionById: (int) id;
 -(ExhibitorDTO *) getExhibitorById: (int) id;
+
+-(NSMutableArray *)getAllAgendas;
+-(AgendaDTO *)getDay1Agenda;
+-(AgendaDTO *)getDay2Agenda;
+-(AgendaDTO *)getDay3Agenda;
+
+-(NSMutableArray *)getAllMyAgendas;
+-(AgendaDTO *)getDay1MyAgenda;
+-(AgendaDTO *)getDay2MyAgenda;
+-(AgendaDTO *)getDay3MyAgenda;
+
+
 -(void) dropDatabase;
+
 @end

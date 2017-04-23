@@ -13,17 +13,23 @@
 #import "SpeakerDTO.h"
 #import "SessionDTO.h"
 #import "ExhibitorDTO.h"
+#import "AttendeeDTO.h"
+#import "DBHandler.h"
 
 @implementation WebServiceDataProvider
-+(void)getAgendas{
++(void)getAgendasIntoViewController: (id<ViewControllerDelegate>) viewController {
     
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
     
-    //TODO
     //Change Mail To User Mail From NSUserDefaults
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSData* userData = [userDefaults objectForKey:@"user"];
+    AttendeeDTO* user = [NSKeyedUnarchiver unarchiveObjectWithData:userData];
+    NSString* email = user.email;
     
-    NSURLRequest *request = [URLProvider getSessionsRequestByUsername:@"eng.medhat.cs.h@gmail.com"];
+    
+    NSURLRequest *request = [URLProvider getSessionsRequestByUsername:email];
     
     NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
         if (error) {
@@ -108,21 +114,22 @@
                 //            for (SessionDTO * ses in sessions) {
                 //                [ses printOject];
                 //            }
-                
-                NSLog(@"\nAgenda*******\n");
-                for(AgendaDTO* myAgendaDTO in agendaDTOS){
-                    [myAgendaDTO print];
-                }
-                NSLog(@"\nAgenda*******\n");
-                
-                //TODO
+               
+                //TODO (DONE - NOT Tested)
                 //Save agendaDTOS in DB
+                DBHandler *dbHandler = [DBHandler getDB];
+                [dbHandler addOrUpdateAgendas:agendaDTOS];
+                
                 //Replace array with agendaDTOS
                 //Refresh Table
+                [viewController refreshTableUsingArray:agendaDTOS];
                 
             }else{
                 //Status = view.failed
                 NSLog(@"Status = view.failed");
+                
+                //Todo
+                //Show Alert
             }
         }
     }];
@@ -134,15 +141,19 @@
     
 }
 
-+(void)getSpeakers{
++(void)getSpeakersIntoViewController: (id<ViewControllerDelegate>) viewController{
     
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
     
-    //TODO
     //Change Mail To User Mail From NSUserDefaults
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSData* userData = [userDefaults objectForKey:@"user"];
+    AttendeeDTO* user = [NSKeyedUnarchiver unarchiveObjectWithData:userData];
+    NSString* email = user.email;
     
-    NSURLRequest *request = [URLProvider getSpeakersRequestByUsername:@"eng.medhat.cs.h@gmail.com"];
+    
+    NSURLRequest *request = [URLProvider getSpeakersRequestByUsername:email];
     
     NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
         if (error) {
@@ -170,13 +181,14 @@
                     
                 }
                 
-//                for (SpeakerDTO* mySpeaker in speakers){
-//                    [mySpeaker print];
-//                }
                 
                 //TODO
                 //Add Objects in DB
+                DBHandler *dbHandler = [DBHandler new];
+                [dbHandler addOrUpdateSpeakers:speakers];
+
                 //Refresh Array, Reload Table.
+                [viewController refreshTableUsingArray:speakers];
                 
                 
             }else{
@@ -190,14 +202,17 @@
     
 }
 
-+(void)getExhibitors{
++(void)getExhibitorsIntoViewController: (id<ViewControllerDelegate>) viewController{
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
     
-    //TODO
     //Change Mail To User Mail From NSUserDefaults
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSData* userData = [userDefaults objectForKey:@"user"];
+    AttendeeDTO* user = [NSKeyedUnarchiver unarchiveObjectWithData:userData];
+    NSString* email = user.email;
     
-    NSURLRequest *request = [URLProvider getExhibtiorsRequestByUsername:@"eng.medhat.cs.h@gmail.com"];
+    NSURLRequest *request = [URLProvider getExhibtiorsRequestByUsername:email];
     
     NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
         if (error) {
@@ -229,13 +244,15 @@
                     
                 }
                 
-                for (ExhibitorDTO* myExhibitor in exhibitors){
-                    [myExhibitor print];
-                }
+                
                 
                 //TODO
                 //Add Objects in DB
+                DBHandler *dbHandler = [DBHandler new];
+                [dbHandler addOrUpdateExhibitors:exhibitors];
+                
                 //Refresh Array, Reload Table.
+                [viewController refreshTableUsingArray:exhibitors];
                 
                 
             }else{
@@ -246,6 +263,79 @@
     }];
     
     [dataTask resume];
+    
+}
+
++(void)loginWithUserName:(NSString *)userName andPassword:(NSString *)password andViewController: (id<ViewControllerDelegate>) viewController{
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+    
+    NSURLRequest *request = [URLProvider getLoginRequestByUsername:userName andPasswrd:password];
+    
+    NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+        if (error) {
+            NSLog(@"Error: %@", error);
+        } else {
+            
+            if([[responseObject objectForKey:@"status"]isEqualToString:@"view.success"]){
+                AttendeeDTO * user = [responseObject objectForKey:@"result"];
+                NSLog(@"%@",user);
+                
+                //Putting into UserDefaults
+                NSData* userData = [NSKeyedArchiver archivedDataWithRootObject:user];
+                NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+                [userDefaults setObject:userData forKey:@"user"];
+                [userDefaults synchronize];
+                
+                //TODO
+                //Dissmiss current viewController
+                //push Home view controller
+                
+            }else{
+                //Status = view.failed
+                NSLog(@"Status = view.failed");
+            }
+        }
+    }];
+    
+    
+    [dataTask resume];
+    
+    
+    
+}
+
+
++(void)setImageFromURLString:(NSString *)url intoImageView:(UIImageView *)imageView andSaveObject: (id) object{
+    
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+    
+    NSURL *URL = [NSURL URLWithString:url];
+    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+    
+    NSURLSessionDownloadTask *downloadTask = [manager downloadTaskWithRequest:request progress:nil destination:^NSURL *(NSURL *targetPath, NSURLResponse *response) {
+        NSURL *documentsDirectoryURL = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil];
+        return [documentsDirectoryURL URLByAppendingPathComponent:[response suggestedFilename]];
+    } completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error) {
+        
+        //Setting ImageView
+        NSData *imageData = [[NSData alloc] initWithContentsOfURL:filePath];
+        UIImage *image = [UIImage imageWithData: imageData];
+        imageView.image = image;
+        
+        
+        //Adding In DB
+        if([object isKindOfClass:[ExhibitorDTO class]]){
+            ((ExhibitorDTO *) object).image = imageData;
+            [[DBHandler getDB] addOrUpdateExhibitor:object];
+        }else if ([object isKindOfClass:[SpeakerDTO class]]){
+            ((SpeakerDTO *) object).image = imageData;
+            [[DBHandler getDB] addOrUpdateSpeaker:object];
+        }
+        
+    }];
+    [downloadTask resume];
     
 }
 

@@ -11,22 +11,24 @@
 		4C1E5DF11E9E248500760766 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1E5DF01E9E248500760766 /* main.m */; };
 		4C1E5DF41E9E248500760766 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1E5DF31E9E248500760766 /* AppDelegate.m */; };
 		4C1E5DF71E9E248500760766 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1E5DF61E9E248500760766 /* ViewController.m */; };
-		4C1E5DFA1E9E248500760766 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C1E5DF81E9E248500760766 /* Main.storyboard */; };
 		4C1E5DFC1E9E248500760766 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C1E5DFB1E9E248500760766 /* Assets.xcassets */; };
 		4C1E5DFF1E9E248500760766 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C1E5DFD1E9E248500760766 /* LaunchScreen.storyboard */; };
 		CC2B392A1E9FE54A0099EEE9 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2B39291E9FE54A0099EEE9 /* SWRevealViewController.m */; };
 		CC2B392D1E9FEC790099EEE9 /* SidebarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2B392C1E9FEC790099EEE9 /* SidebarTableViewController.m */; };
 		CC6D930C1EA2281800361E83 /* AgendaTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6D930B1EA2281800361E83 /* AgendaTabBarController.m */; };
-		CC94D94E1EA375480007B87E /* AgendaDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = CC94D9431EA375480007B87E /* AgendaDTO.m */; };
-		CC94D94F1EA375480007B87E /* AttendeeDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = CC94D9451EA375480007B87E /* AttendeeDTO.m */; };
-		CC94D9501EA375480007B87E /* DBHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = CC94D9471EA375480007B87E /* DBHandler.m */; };
-		CC94D9511EA375480007B87E /* ExhibitorDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = CC94D9491EA375480007B87E /* ExhibitorDTO.m */; };
-		CC94D9521EA375480007B87E /* SessionDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = CC94D94B1EA375480007B87E /* SessionDTO.m */; };
-		CC94D9531EA375480007B87E /* SpeakerDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = CC94D94D1EA375480007B87E /* SpeakerDTO.m */; };
-		CC94D9591EA375840007B87E /* URLProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CC94D9561EA375840007B87E /* URLProvider.m */; };
-		CC94D95A1EA375840007B87E /* WebServiceDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CC94D9581EA375840007B87E /* WebServiceDataProvider.m */; };
 		CCA77D5E1EA0BAF7005C498E /* SpeakersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA77D5D1EA0BAF7005C498E /* SpeakersViewController.m */; };
 		CCA77D611EA0BC30005C498E /* ExhibitorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA77D601EA0BC30005C498E /* ExhibitorsViewController.m */; };
+		CCAFD2401EAC6ECB002C2547 /* AllDaysViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCAFD23F1EAC6ECB002C2547 /* AllDaysViewController.m */; };
+		CCAFD2421EAC727D002C2547 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCAFD2411EAC727D002C2547 /* Main.storyboard */; };
+		CCAFD2481EACB9EC002C2547 /* SessionDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCAFD2471EACB9EC002C2547 /* SessionDetailsViewController.m */; };
+		CCAFD24D1EACC1D2002C2547 /* DBHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = CCAFD24C1EACC1D2002C2547 /* DBHandler.m */; };
+		CCAFD2521EACC20B002C2547 /* URLProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CCAFD24F1EACC20B002C2547 /* URLProvider.m */; };
+		CCAFD2531EACC20B002C2547 /* WebServiceDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = CCAFD2511EACC20B002C2547 /* WebServiceDataProvider.m */; };
+		CCAFD25F1EACC3CE002C2547 /* AgendaDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = CCAFD2561EACC3CE002C2547 /* AgendaDTO.m */; };
+		CCAFD2601EACC3CE002C2547 /* AttendeeDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = CCAFD2581EACC3CE002C2547 /* AttendeeDTO.m */; };
+		CCAFD2611EACC3CE002C2547 /* ExhibitorDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = CCAFD25A1EACC3CE002C2547 /* ExhibitorDTO.m */; };
+		CCAFD2621EACC3CE002C2547 /* SessionDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = CCAFD25C1EACC3CE002C2547 /* SessionDTO.m */; };
+		CCAFD2631EACC3CE002C2547 /* SpeakerDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = CCAFD25E1EACC3CE002C2547 /* SpeakerDTO.m */; };
 		CCC3572E1EA865A20057332A /* SpeakerDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC3572D1EA865A20057332A /* SpeakerDetailsViewController.m */; };
 		CCC357311EA867120057332A /* ProfileTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC357301EA867120057332A /* ProfileTabBarController.m */; };
 /* End PBXBuildFile section */
@@ -38,7 +40,6 @@
 		4C1E5DF31E9E248500760766 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4C1E5DF51E9E248500760766 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		4C1E5DF61E9E248500760766 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		4C1E5DF91E9E248500760766 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4C1E5DFB1E9E248500760766 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C1E5DFE1E9E248500760766 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C1E5E001E9E248500760766 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -50,26 +51,32 @@
 		CC6D93061EA2198400361E83 /* MDW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MDW.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC6D930A1EA2281800361E83 /* AgendaTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgendaTabBarController.h; sourceTree = "<group>"; };
 		CC6D930B1EA2281800361E83 /* AgendaTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgendaTabBarController.m; sourceTree = "<group>"; };
-		CC94D9421EA375480007B87E /* AgendaDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgendaDTO.h; sourceTree = "<group>"; };
-		CC94D9431EA375480007B87E /* AgendaDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgendaDTO.m; sourceTree = "<group>"; };
-		CC94D9441EA375480007B87E /* AttendeeDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttendeeDTO.h; sourceTree = "<group>"; };
-		CC94D9451EA375480007B87E /* AttendeeDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttendeeDTO.m; sourceTree = "<group>"; };
-		CC94D9461EA375480007B87E /* DBHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBHandler.h; sourceTree = "<group>"; };
-		CC94D9471EA375480007B87E /* DBHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBHandler.m; sourceTree = "<group>"; };
-		CC94D9481EA375480007B87E /* ExhibitorDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExhibitorDTO.h; sourceTree = "<group>"; };
-		CC94D9491EA375480007B87E /* ExhibitorDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExhibitorDTO.m; sourceTree = "<group>"; };
-		CC94D94A1EA375480007B87E /* SessionDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionDTO.h; sourceTree = "<group>"; };
-		CC94D94B1EA375480007B87E /* SessionDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionDTO.m; sourceTree = "<group>"; };
-		CC94D94C1EA375480007B87E /* SpeakerDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerDTO.h; sourceTree = "<group>"; };
-		CC94D94D1EA375480007B87E /* SpeakerDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerDTO.m; sourceTree = "<group>"; };
-		CC94D9551EA375840007B87E /* URLProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLProvider.h; sourceTree = "<group>"; };
-		CC94D9561EA375840007B87E /* URLProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLProvider.m; sourceTree = "<group>"; };
-		CC94D9571EA375840007B87E /* WebServiceDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebServiceDataProvider.h; sourceTree = "<group>"; };
-		CC94D9581EA375840007B87E /* WebServiceDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebServiceDataProvider.m; sourceTree = "<group>"; };
 		CCA77D5C1EA0BAF7005C498E /* SpeakersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakersViewController.h; sourceTree = "<group>"; };
 		CCA77D5D1EA0BAF7005C498E /* SpeakersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakersViewController.m; sourceTree = "<group>"; };
 		CCA77D5F1EA0BC30005C498E /* ExhibitorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExhibitorsViewController.h; sourceTree = "<group>"; };
 		CCA77D601EA0BC30005C498E /* ExhibitorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExhibitorsViewController.m; sourceTree = "<group>"; };
+		CCAFD23E1EAC6ECB002C2547 /* AllDaysViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllDaysViewController.h; sourceTree = "<group>"; };
+		CCAFD23F1EAC6ECB002C2547 /* AllDaysViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllDaysViewController.m; sourceTree = "<group>"; };
+		CCAFD2411EAC727D002C2547 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		CCAFD2461EACB9EC002C2547 /* SessionDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionDetailsViewController.h; sourceTree = "<group>"; };
+		CCAFD2471EACB9EC002C2547 /* SessionDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionDetailsViewController.m; sourceTree = "<group>"; };
+		CCAFD24B1EACC1D2002C2547 /* DBHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBHandler.h; sourceTree = "<group>"; };
+		CCAFD24C1EACC1D2002C2547 /* DBHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBHandler.m; sourceTree = "<group>"; };
+		CCAFD24E1EACC20B002C2547 /* URLProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLProvider.h; sourceTree = "<group>"; };
+		CCAFD24F1EACC20B002C2547 /* URLProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLProvider.m; sourceTree = "<group>"; };
+		CCAFD2501EACC20B002C2547 /* WebServiceDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebServiceDataProvider.h; sourceTree = "<group>"; };
+		CCAFD2511EACC20B002C2547 /* WebServiceDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebServiceDataProvider.m; sourceTree = "<group>"; };
+		CCAFD2541EACC295002C2547 /* ViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewControllerDelegate.h; sourceTree = "<group>"; };
+		CCAFD2551EACC3CE002C2547 /* AgendaDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgendaDTO.h; sourceTree = "<group>"; };
+		CCAFD2561EACC3CE002C2547 /* AgendaDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgendaDTO.m; sourceTree = "<group>"; };
+		CCAFD2571EACC3CE002C2547 /* AttendeeDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttendeeDTO.h; sourceTree = "<group>"; };
+		CCAFD2581EACC3CE002C2547 /* AttendeeDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttendeeDTO.m; sourceTree = "<group>"; };
+		CCAFD2591EACC3CE002C2547 /* ExhibitorDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExhibitorDTO.h; sourceTree = "<group>"; };
+		CCAFD25A1EACC3CE002C2547 /* ExhibitorDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExhibitorDTO.m; sourceTree = "<group>"; };
+		CCAFD25B1EACC3CE002C2547 /* SessionDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionDTO.h; sourceTree = "<group>"; };
+		CCAFD25C1EACC3CE002C2547 /* SessionDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionDTO.m; sourceTree = "<group>"; };
+		CCAFD25D1EACC3CE002C2547 /* SpeakerDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerDTO.h; sourceTree = "<group>"; };
+		CCAFD25E1EACC3CE002C2547 /* SpeakerDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerDTO.m; sourceTree = "<group>"; };
 		CCC3572C1EA865A20057332A /* SpeakerDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerDetailsViewController.h; sourceTree = "<group>"; };
 		CCC3572D1EA865A20057332A /* SpeakerDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerDetailsViewController.m; sourceTree = "<group>"; };
 		CCC3572F1EA867120057332A /* ProfileTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileTabBarController.h; sourceTree = "<group>"; };
@@ -102,30 +109,22 @@
 		4C1E5DEE1E9E248500760766 /* MDW */ = {
 			isa = PBXGroup;
 			children = (
-				CC94D9541EA3755C0007B87E /* Services */,
-				CC94D9411EA374ED0007B87E /* DTOs */,
-				CC2B39251E9FE4980099EEE9 /* SWRevealViewController */,
+				CCAFD23D1EAC6E86002C2547 /* Agenda */,
 				4C1E5DF21E9E248500760766 /* AppDelegate.h */,
 				4C1E5DF31E9E248500760766 /* AppDelegate.m */,
-				4C1E5DF51E9E248500760766 /* ViewController.h */,
-				4C1E5DF61E9E248500760766 /* ViewController.m */,
-				4C1E5DF81E9E248500760766 /* Main.storyboard */,
 				4C1E5DFB1E9E248500760766 /* Assets.xcassets */,
-				4C1E5DFD1E9E248500760766 /* LaunchScreen.storyboard */,
+				CC94D9411EA374ED0007B87E /* DTOs */,
+				CCAFD2441EAC90F3002C2547 /* Exhibitors */,
 				4C1E5E001E9E248500760766 /* Info.plist */,
-				CC6D930A1EA2281800361E83 /* AgendaTabBarController.h */,
-				CC6D930B1EA2281800361E83 /* AgendaTabBarController.m */,
-				CCC3572F1EA867120057332A /* ProfileTabBarController.h */,
-				CCC357301EA867120057332A /* ProfileTabBarController.m */,
-				CC2B392B1E9FEC790099EEE9 /* SidebarTableViewController.h */,
-				CC2B392C1E9FEC790099EEE9 /* SidebarTableViewController.m */,
-				CCA77D5C1EA0BAF7005C498E /* SpeakersViewController.h */,
-				CCA77D5D1EA0BAF7005C498E /* SpeakersViewController.m */,
-				CCC3572C1EA865A20057332A /* SpeakerDetailsViewController.h */,
-				CCC3572D1EA865A20057332A /* SpeakerDetailsViewController.m */,
-				CCA77D5F1EA0BC30005C498E /* ExhibitorsViewController.h */,
-				CCA77D601EA0BC30005C498E /* ExhibitorsViewController.m */,
+				4C1E5DFD1E9E248500760766 /* LaunchScreen.storyboard */,
+				CCAFD2411EAC727D002C2547 /* Main.storyboard */,
+				CCAFD2451EAC910E002C2547 /* Profile */,
+				CC94D9541EA3755C0007B87E /* Services */,
+				CCAFD2491EACBE18002C2547 /* SidebarTableViewController */,
+				CCAFD2431EAC8FE9002C2547 /* Speakers */,
 				4C1E5DEF1E9E248500760766 /* Supporting Files */,
+				CC2B39251E9FE4980099EEE9 /* SWRevealViewController */,
+				CCAFD24A1EACBE40002C2547 /* ViewController */,
 			);
 			path = MDW;
 			sourceTree = "<group>";
@@ -150,18 +149,18 @@
 		CC94D9411EA374ED0007B87E /* DTOs */ = {
 			isa = PBXGroup;
 			children = (
-				CC94D9421EA375480007B87E /* AgendaDTO.h */,
-				CC94D9431EA375480007B87E /* AgendaDTO.m */,
-				CC94D9441EA375480007B87E /* AttendeeDTO.h */,
-				CC94D9451EA375480007B87E /* AttendeeDTO.m */,
-				CC94D9461EA375480007B87E /* DBHandler.h */,
-				CC94D9471EA375480007B87E /* DBHandler.m */,
-				CC94D9481EA375480007B87E /* ExhibitorDTO.h */,
-				CC94D9491EA375480007B87E /* ExhibitorDTO.m */,
-				CC94D94A1EA375480007B87E /* SessionDTO.h */,
-				CC94D94B1EA375480007B87E /* SessionDTO.m */,
-				CC94D94C1EA375480007B87E /* SpeakerDTO.h */,
-				CC94D94D1EA375480007B87E /* SpeakerDTO.m */,
+				CCAFD2551EACC3CE002C2547 /* AgendaDTO.h */,
+				CCAFD2561EACC3CE002C2547 /* AgendaDTO.m */,
+				CCAFD2571EACC3CE002C2547 /* AttendeeDTO.h */,
+				CCAFD2581EACC3CE002C2547 /* AttendeeDTO.m */,
+				CCAFD2591EACC3CE002C2547 /* ExhibitorDTO.h */,
+				CCAFD25A1EACC3CE002C2547 /* ExhibitorDTO.m */,
+				CCAFD25B1EACC3CE002C2547 /* SessionDTO.h */,
+				CCAFD25C1EACC3CE002C2547 /* SessionDTO.m */,
+				CCAFD25D1EACC3CE002C2547 /* SpeakerDTO.h */,
+				CCAFD25E1EACC3CE002C2547 /* SpeakerDTO.m */,
+				CCAFD24B1EACC1D2002C2547 /* DBHandler.h */,
+				CCAFD24C1EACC1D2002C2547 /* DBHandler.m */,
 			);
 			name = DTOs;
 			sourceTree = "<group>";
@@ -169,12 +168,73 @@
 		CC94D9541EA3755C0007B87E /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				CC94D9551EA375840007B87E /* URLProvider.h */,
-				CC94D9561EA375840007B87E /* URLProvider.m */,
-				CC94D9571EA375840007B87E /* WebServiceDataProvider.h */,
-				CC94D9581EA375840007B87E /* WebServiceDataProvider.m */,
+				CCAFD24E1EACC20B002C2547 /* URLProvider.h */,
+				CCAFD24F1EACC20B002C2547 /* URLProvider.m */,
+				CCAFD2501EACC20B002C2547 /* WebServiceDataProvider.h */,
+				CCAFD2511EACC20B002C2547 /* WebServiceDataProvider.m */,
 			);
 			name = Services;
+			sourceTree = "<group>";
+		};
+		CCAFD23D1EAC6E86002C2547 /* Agenda */ = {
+			isa = PBXGroup;
+			children = (
+				CC6D930A1EA2281800361E83 /* AgendaTabBarController.h */,
+				CC6D930B1EA2281800361E83 /* AgendaTabBarController.m */,
+				CCAFD23E1EAC6ECB002C2547 /* AllDaysViewController.h */,
+				CCAFD23F1EAC6ECB002C2547 /* AllDaysViewController.m */,
+				CCAFD2461EACB9EC002C2547 /* SessionDetailsViewController.h */,
+				CCAFD2471EACB9EC002C2547 /* SessionDetailsViewController.m */,
+			);
+			name = Agenda;
+			sourceTree = "<group>";
+		};
+		CCAFD2431EAC8FE9002C2547 /* Speakers */ = {
+			isa = PBXGroup;
+			children = (
+				CCA77D5C1EA0BAF7005C498E /* SpeakersViewController.h */,
+				CCA77D5D1EA0BAF7005C498E /* SpeakersViewController.m */,
+				CCC3572C1EA865A20057332A /* SpeakerDetailsViewController.h */,
+				CCC3572D1EA865A20057332A /* SpeakerDetailsViewController.m */,
+			);
+			name = Speakers;
+			sourceTree = "<group>";
+		};
+		CCAFD2441EAC90F3002C2547 /* Exhibitors */ = {
+			isa = PBXGroup;
+			children = (
+				CCA77D5F1EA0BC30005C498E /* ExhibitorsViewController.h */,
+				CCA77D601EA0BC30005C498E /* ExhibitorsViewController.m */,
+			);
+			name = Exhibitors;
+			sourceTree = "<group>";
+		};
+		CCAFD2451EAC910E002C2547 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				CCC3572F1EA867120057332A /* ProfileTabBarController.h */,
+				CCC357301EA867120057332A /* ProfileTabBarController.m */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		CCAFD2491EACBE18002C2547 /* SidebarTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CC2B392B1E9FEC790099EEE9 /* SidebarTableViewController.h */,
+				CC2B392C1E9FEC790099EEE9 /* SidebarTableViewController.m */,
+			);
+			name = SidebarTableViewController;
+			sourceTree = "<group>";
+		};
+		CCAFD24A1EACBE40002C2547 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CCAFD2541EACC295002C2547 /* ViewControllerDelegate.h */,
+				4C1E5DF51E9E248500760766 /* ViewController.h */,
+				4C1E5DF61E9E248500760766 /* ViewController.m */,
+			);
+			name = ViewController;
 			sourceTree = "<group>";
 		};
 		D1C2E792295D0903945D9849 /* Pods */ = {
@@ -256,9 +316,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCAFD2421EAC727D002C2547 /* Main.storyboard in Resources */,
 				4C1E5DFF1E9E248500760766 /* LaunchScreen.storyboard in Resources */,
 				4C1E5DFC1E9E248500760766 /* Assets.xcassets in Resources */,
-				4C1E5DFA1E9E248500760766 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,38 +377,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC94D9521EA375480007B87E /* SessionDTO.m in Sources */,
-				CC94D9511EA375480007B87E /* ExhibitorDTO.m in Sources */,
+				CCAFD24D1EACC1D2002C2547 /* DBHandler.m in Sources */,
 				CC2B392D1E9FEC790099EEE9 /* SidebarTableViewController.m in Sources */,
 				CC6D930C1EA2281800361E83 /* AgendaTabBarController.m in Sources */,
-				CC94D9501EA375480007B87E /* DBHandler.m in Sources */,
 				CCA77D5E1EA0BAF7005C498E /* SpeakersViewController.m in Sources */,
-				CC94D9591EA375840007B87E /* URLProvider.m in Sources */,
 				CCC357311EA867120057332A /* ProfileTabBarController.m in Sources */,
-				CC94D94F1EA375480007B87E /* AttendeeDTO.m in Sources */,
-				CC94D94E1EA375480007B87E /* AgendaDTO.m in Sources */,
+				CCAFD2631EACC3CE002C2547 /* SpeakerDTO.m in Sources */,
+				CCAFD2531EACC20B002C2547 /* WebServiceDataProvider.m in Sources */,
+				CCAFD2621EACC3CE002C2547 /* SessionDTO.m in Sources */,
 				4C1E5DF71E9E248500760766 /* ViewController.m in Sources */,
 				4C1E5DF41E9E248500760766 /* AppDelegate.m in Sources */,
-				CC94D9531EA375480007B87E /* SpeakerDTO.m in Sources */,
+				CCAFD2521EACC20B002C2547 /* URLProvider.m in Sources */,
 				4C1E5DF11E9E248500760766 /* main.m in Sources */,
+				CCAFD2401EAC6ECB002C2547 /* AllDaysViewController.m in Sources */,
 				CCA77D611EA0BC30005C498E /* ExhibitorsViewController.m in Sources */,
+				CCAFD2611EACC3CE002C2547 /* ExhibitorDTO.m in Sources */,
 				CCC3572E1EA865A20057332A /* SpeakerDetailsViewController.m in Sources */,
-				CC94D95A1EA375840007B87E /* WebServiceDataProvider.m in Sources */,
+				CCAFD25F1EACC3CE002C2547 /* AgendaDTO.m in Sources */,
+				CCAFD2481EACB9EC002C2547 /* SessionDetailsViewController.m in Sources */,
 				CC2B392A1E9FE54A0099EEE9 /* SWRevealViewController.m in Sources */,
+				CCAFD2601EACC3CE002C2547 /* AttendeeDTO.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		4C1E5DF81E9E248500760766 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4C1E5DF91E9E248500760766 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4C1E5DFD1E9E248500760766 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
