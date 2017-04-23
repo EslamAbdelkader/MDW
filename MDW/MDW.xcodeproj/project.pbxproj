@@ -16,6 +16,7 @@
 		CC2B392A1E9FE54A0099EEE9 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2B39291E9FE54A0099EEE9 /* SWRevealViewController.m */; };
 		CC2B392D1E9FEC790099EEE9 /* SidebarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2B392C1E9FEC790099EEE9 /* SidebarTableViewController.m */; };
 		CC6D930C1EA2281800361E83 /* AgendaTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6D930B1EA2281800361E83 /* AgendaTabBarController.m */; };
+		CC6ECA151EAD00A00072D282 /* UIImageView+ImageDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6ECA141EAD00A00072D282 /* UIImageView+ImageDownload.m */; };
 		CCA77D5E1EA0BAF7005C498E /* SpeakersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA77D5D1EA0BAF7005C498E /* SpeakersViewController.m */; };
 		CCA77D611EA0BC30005C498E /* ExhibitorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA77D601EA0BC30005C498E /* ExhibitorsViewController.m */; };
 		CCAFD2401EAC6ECB002C2547 /* AllDaysViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCAFD23F1EAC6ECB002C2547 /* AllDaysViewController.m */; };
@@ -54,6 +55,8 @@
 		CC6D93061EA2198400361E83 /* MDW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MDW.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC6D930A1EA2281800361E83 /* AgendaTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgendaTabBarController.h; sourceTree = "<group>"; };
 		CC6D930B1EA2281800361E83 /* AgendaTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgendaTabBarController.m; sourceTree = "<group>"; };
+		CC6ECA131EAD00A00072D282 /* UIImageView+ImageDownload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImageView+ImageDownload.h"; path = "../UIImageView+ImageDownload.h"; sourceTree = "<group>"; };
+		CC6ECA141EAD00A00072D282 /* UIImageView+ImageDownload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+ImageDownload.m"; path = "../UIImageView+ImageDownload.m"; sourceTree = "<group>"; };
 		CCA77D5C1EA0BAF7005C498E /* SpeakersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakersViewController.h; sourceTree = "<group>"; };
 		CCA77D5D1EA0BAF7005C498E /* SpeakersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakersViewController.m; sourceTree = "<group>"; };
 		CCA77D5F1EA0BC30005C498E /* ExhibitorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExhibitorsViewController.h; sourceTree = "<group>"; };
@@ -118,6 +121,8 @@
 		4C1E5DEE1E9E248500760766 /* MDW */ = {
 			isa = PBXGroup;
 			children = (
+				CC6ECA131EAD00A00072D282 /* UIImageView+ImageDownload.h */,
+				CC6ECA141EAD00A00072D282 /* UIImageView+ImageDownload.m */,
 				CCAFD23D1EAC6E86002C2547 /* Agenda */,
 				4C1E5DF21E9E248500760766 /* AppDelegate.h */,
 				4C1E5DF31E9E248500760766 /* AppDelegate.m */,
@@ -408,6 +413,7 @@
 				CCAFD2521EACC20B002C2547 /* URLProvider.m in Sources */,
 				4C1E5DF11E9E248500760766 /* main.m in Sources */,
 				CCAFD2401EAC6ECB002C2547 /* AllDaysViewController.m in Sources */,
+				CC6ECA151EAD00A00072D282 /* UIImageView+ImageDownload.m in Sources */,
 				CCA77D611EA0BC30005C498E /* ExhibitorsViewController.m in Sources */,
 				CCAFD2611EACC3CE002C2547 /* ExhibitorDTO.m in Sources */,
 				CCC3572E1EA865A20057332A /* SpeakerDetailsViewController.m in Sources */,
