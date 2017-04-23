@@ -18,7 +18,7 @@
 #import "SWRevealViewController.h"
 
 @implementation WebServiceDataProvider
-+(void)getAgendasIntoViewController: (id<ViewControllerDelegate>) viewController {
++(void)getAgendasIntoViewController: (id<ViewControllerDelegate>) viewController orLoginFromViewController:(UIViewController *)loginViewController {
     
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
@@ -129,6 +129,12 @@
                 //Refresh Table
                 if(viewController){
                     [viewController refreshTableUsingArray:agendaDTOS];
+                }else{
+                    
+                    SWRevealViewController *vc = [loginViewController.storyboard instantiateViewControllerWithIdentifier:@"revealController"];
+                    
+                    
+                    [loginViewController presentViewController:vc animated:YES completion:nil];
                 }
                 
             }else{
@@ -308,18 +314,14 @@
                 [userDefaults synchronize];
                 
                 //Getting Agendas
-                [self getAgendasIntoViewController:nil];
+                
+                UIViewController *myViewController = (UIViewController*) viewController;
+                [self getAgendasIntoViewController:nil orLoginFromViewController:myViewController];
                 
                 //TODO
                 //Dissmiss current viewController
                 //push Home view controller
                 
-                
-                UIViewController *myViewController = (UIViewController*) viewController;
-                SWRevealViewController *vc = [myViewController.storyboard instantiateViewControllerWithIdentifier:@"revealController"];
-                
-                
-                [myViewController presentViewController:vc animated:YES completion:nil];
                 
             }else{
                 //Status = view.failed

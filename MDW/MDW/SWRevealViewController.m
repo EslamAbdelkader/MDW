@@ -27,6 +27,8 @@
 #import <QuartzCore/QuartzCore.h>
 
 #import "SWRevealViewController.h"
+#import "AgendaTabBarController.h"
+#import "DBHandler.h"
 
 
 #pragma mark - StatusBar Helper Function
@@ -1821,9 +1823,15 @@ NSString * const SWSegueRightIdentifier = @"sw_right";
     SWRevealViewController *rvc = self.sourceViewController;
     UIViewController *dvc = self.destinationViewController;
     
-    if ( [identifier isEqualToString:SWSegueFrontIdentifier] )
+    if ( [identifier isEqualToString:SWSegueFrontIdentifier] ){
         operation = SWRevealControllerOperationReplaceFrontController;
-    
+        
+        UINavigationController *navController = dvc;
+            AgendaTabBarController *agendaController = [navController childViewControllers].firstObject;
+            agendaController.title = @"Agenda";
+            agendaController.agendas = [[DBHandler getDB] getAllAgendas];
+        
+    }
     else if ( [identifier isEqualToString:SWSegueRearIdentifier] )
         operation = SWRevealControllerOperationReplaceRearController;
     
@@ -1847,6 +1855,7 @@ NSString * const SWSegueRightIdentifier = @"sw_right";
     UIViewController *dvc = self.destinationViewController;
     [rvc pushFrontViewController:dvc animated:YES];
 }
+
 
 @end
 
