@@ -17,7 +17,7 @@
     _titleLbl.text = _session.name;
     
     NSDate *start = [NSDate dateWithTimeIntervalSince1970:_session.startDate /1000];
-    NSDate *end = [NSDate dateWithTimeIntervalSince1970:_session.endDate / 1000];
+    NSDate *end = [NSDate dateWithTimeIntervalSince1970:_session.endDate /1000];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"EEE, dd MMM"];

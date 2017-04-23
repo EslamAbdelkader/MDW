@@ -10,6 +10,8 @@
 #import "SWRevealViewController.h"
 #import "AgendaTabBarController.h"
 #import "DBHandler.h"
+#import "ExhibitorsViewController.h"
+#import "SpeakersViewController.h"
 
 @interface SidebarTableViewController ()
 
@@ -83,6 +85,16 @@
         AgendaTabBarController *agendaController = [navController childViewControllers].firstObject;
         agendaController.myTitle = @"My Agenda";
         agendaController.agendas = [[DBHandler getDB] getAllMyAgendas];
+    }
+    else if ([segue.identifier isEqualToString:@"speakersSeg"]) {
+        UINavigationController *navController = segue.destinationViewController;
+        SpeakersViewController *speakersController = [navController childViewControllers].firstObject;
+        //speakersController.speakers = [[DBHandler getDB] ];
+    }
+    else if ([segue.identifier isEqualToString:@"exhibitorsSeg"]) {
+        UINavigationController *navController = segue.destinationViewController;
+        ExhibitorsViewController *exhibitorsController = [navController childViewControllers].firstObject;
+        //exhibitorsController.exhibitors = [[DBHandler getDB] ];
     }
 }
 

@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ExhibitorsViewController : UITableViewController
+@interface ExhibitorsViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
+
+@property NSMutableArray *exhibitors;
 
 @end
