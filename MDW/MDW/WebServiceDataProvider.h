@@ -12,7 +12,7 @@
 
 @interface WebServiceDataProvider : NSObject
 
-+(void) getAgendasIntoViewController: (id<ViewControllerDelegate>) viewController ;
++(void) getAgendasIntoViewController: (id<ViewControllerDelegate>) viewController orLoginFromViewController :(UIViewController *) loginViewController ;
 +(void) getSpeakersIntoViewController: (id<ViewControllerDelegate>) viewController;
 +(void) getExhibitorsIntoViewController: (id<ViewControllerDelegate>) viewController;
 +(void) setImageFromURLString: (NSString *) url intoImageView: (UIImageView *) imageView andSaveObject: (id) object;
