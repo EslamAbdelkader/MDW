@@ -12,5 +12,10 @@
 
 - (IBAction)loginBtnAction:(id)sender;
 
+@property (strong, nonatomic) IBOutlet UITextField *emailTxt;
+
+@property (strong, nonatomic) IBOutlet UITextField *passwordTxt;
+
+
 @end
 

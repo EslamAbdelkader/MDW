@@ -109,7 +109,7 @@ static DBHandler *dbHandler;
 }
 
 -(NSMutableArray *)getAllAgendas{
-    RLMResults *results = [AgendaDTO objectsWhere:@"data = "];
+    RLMResults *results = [AgendaDTO allObjects];
     NSMutableArray *allAgendas = (NSMutableArray *) results;
     return allAgendas;
 }

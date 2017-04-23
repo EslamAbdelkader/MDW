@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "SWRevealViewController.h"
+#import "WebServiceDataProvider.h"
 
 @interface ViewController ()
 
@@ -30,9 +31,14 @@
     // Dispose of any resources that can be recreated.
 }
 
-
 - (IBAction)loginBtnAction:(id)sender {
-    SWRevealViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"revealController"];
-    [self presentViewController:vc animated:YES completion:nil];
+    
+    NSString *email = _emailTxt.text;
+    NSString *pass = _passwordTxt.text;
+    
+//    SWRevealViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"revealController"];
+    [WebServiceDataProvider loginWithUserName:email andPassword:pass andViewController:self];
+    //[self presentViewController:vc animated:YES completion:nil];
 }
+
 @end
