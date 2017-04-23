@@ -43,6 +43,8 @@
 -(AgendaDTO *)getDay2MyAgenda;
 -(AgendaDTO *)getDay3MyAgenda;
 
+-(NSMutableArray *) getAllSpeakers;
+-(NSMutableArray *) getAllExhibitors;
 
 -(void) dropDatabase;
 

@@ -11,6 +11,7 @@
 #import "ViewControllerDelegate.h"
 
 @interface WebServiceDataProvider : NSObject
+
 +(void) getAgendasIntoViewController: (id<ViewControllerDelegate>) viewController ;
 +(void) getSpeakersIntoViewController: (id<ViewControllerDelegate>) viewController;
 +(void) getExhibitorsIntoViewController: (id<ViewControllerDelegate>) viewController;

@@ -111,6 +111,7 @@ static DBHandler *dbHandler;
 -(NSMutableArray *)getAllAgendas{
     RLMResults *results = [AgendaDTO allObjects];
     NSMutableArray *allAgendas = (NSMutableArray *) results;
+    NSLog(@"%@",allAgendas);
     return allAgendas;
 }
 
@@ -193,6 +194,17 @@ static DBHandler *dbHandler;
     
     return day3MyAgenda;
 }
+
+-(NSMutableArray *)getAllSpeakers{
+    NSMutableArray * allSpeakers = (NSMutableArray *)[SpeakerDTO allObjects];
+    return allSpeakers;
+}
+
+-(NSMutableArray *)getAllExhibitors{
+    NSMutableArray * allExhibitors = (NSMutableArray *)[ExhibitorDTO allObjects];
+    return allExhibitors;
+}
+
 
 -(void)dropDatabase{
     RLMRealm *realm = [RLMRealm defaultRealm];
