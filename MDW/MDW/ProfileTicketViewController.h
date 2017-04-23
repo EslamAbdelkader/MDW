@@ -10,4 +10,6 @@
 
 @interface ProfileTicketViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UIImageView *qrImage;
+
 @end

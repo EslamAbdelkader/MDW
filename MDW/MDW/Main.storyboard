@@ -727,9 +727,29 @@
                     <view key="view" contentMode="scaleToFill" id="KPs-6L-aGS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="myTicketBackground" translatesAutoresizingMaskIntoConstraints="NO" id="dZu-PA-xTx">
+                                <rect key="frame" x="27" y="72" width="267" height="435"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loginHeader" translatesAutoresizingMaskIntoConstraints="NO" id="Beu-9e-MjL">
+                                <rect key="frame" x="86" y="292" width="148" height="52"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="April 20-22 2017 Smart Village, ITI" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YXM-OK-bJP">
+                                <rect key="frame" x="86" y="347" width="148" height="49"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0lJ-KR-z5m">
+                                <rect key="frame" x="74" y="111" width="173" height="157"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="My Ticket" image="ticket" id="WTi-8W-C5P"/>
+                    <connections>
+                        <outlet property="qrImage" destination="0lJ-KR-z5m" id="coa-lY-M8c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jzh-15-6md" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -765,8 +785,10 @@
         <image name="info" width="30" height="30"/>
         <image name="leftSideMenuHeader" width="518" height="194"/>
         <image name="location" width="65" height="65"/>
+        <image name="loginHeader" width="372" height="125"/>
         <image name="logout" width="65" height="65"/>
         <image name="menu.png" width="22" height="22"/>
+        <image name="myTicketBackground" width="331" height="607"/>
         <image name="myagenda" width="65" height="65"/>
         <image name="profile" width="65" height="65"/>
         <image name="reveal-icon" width="22" height="17"/>
