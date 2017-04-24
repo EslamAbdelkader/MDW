@@ -1827,9 +1827,9 @@ NSString * const SWSegueRightIdentifier = @"sw_right";
         operation = SWRevealControllerOperationReplaceFrontController;
         
         UINavigationController *navController = dvc;
-            AgendaTabBarController *agendaController = [navController childViewControllers].firstObject;
-            agendaController.title = @"Agenda";
-            agendaController.agendas = [[DBHandler getDB] getAllAgendas];
+        AgendaTabBarController *agendaController = [navController childViewControllers].firstObject;
+        agendaController.title = @"Agenda";
+        agendaController.agendas = [[DBHandler getDB] getAllAgendas];
         
     }
     else if ( [identifier isEqualToString:SWSegueRearIdentifier] )
