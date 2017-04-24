@@ -525,7 +525,7 @@
         <!--Exhibitors View Controller-->
         <scene sceneID="1IJ-MH-O7U">
             <objects>
-                <tableViewController id="IxO-az-IrL" customClass="ExhibitorsViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ExhibitorsView" id="IxO-az-IrL" customClass="ExhibitorsViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" id="K3a-pF-itv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -541,7 +541,7 @@
                                         <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="exihiptors" translatesAutoresizingMaskIntoConstraints="NO" id="yCc-Lo-JEj">
                                             <rect key="frame" x="17" y="4" width="67" height="65"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hAQ-N2-2pW">
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hAQ-N2-2pW">
                                             <rect key="frame" x="104" y="19" width="208" height="35"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -552,8 +552,8 @@
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="IxO-az-IrL" id="Qtp-nG-fF7"/>
-                            <outlet property="delegate" destination="IxO-az-IrL" id="GRT-z1-OQp"/>
+                            <outlet property="dataSource" destination="IxO-az-IrL" id="Pgf-RB-hbF"/>
+                            <outlet property="delegate" destination="IxO-az-IrL" id="hPm-Fa-u3j"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="BVO-LE-emW">

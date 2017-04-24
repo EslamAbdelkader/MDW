@@ -95,6 +95,7 @@
         UINavigationController *navController = segue.destinationViewController;
         ExhibitorsViewController *exhibitorsController = [navController childViewControllers].firstObject;
         exhibitorsController.exhibitors = [[DBHandler getDB] getAllExhibitors];
+        NSLog(@"===== EX COUNT: %i", [exhibitorsController.exhibitors count]);
     }
 }
 

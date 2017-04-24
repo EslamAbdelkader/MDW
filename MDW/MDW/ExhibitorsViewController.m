@@ -14,6 +14,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.storyboard instantiateViewControllerWithIdentifier:@"ExhibitorsView"];
     
     self.title = @"Exhibitors";
     
@@ -53,7 +54,8 @@
     UIImageView *img = [cell viewWithTag:1];
     UILabel *name = [cell viewWithTag:2];
     
-    //[img setImage:[[UIImage alloc] initwith]];
+    //set image
+    name.text = currEx.companyName;
 
     return cell;
 }
