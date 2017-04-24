@@ -10,4 +10,12 @@
 
 @interface ProfileInfoViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UIImageView *profileImg;
+
+@property (strong, nonatomic) IBOutlet UILabel *nameLbl;
+
+@property (strong, nonatomic) IBOutlet UILabel *titleLbl;
+
+@property (strong, nonatomic) IBOutlet UILabel *orgLbl;
+
 @end

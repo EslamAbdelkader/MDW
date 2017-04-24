@@ -12,6 +12,8 @@
 #import "DBHandler.h"
 #import "ExhibitorsViewController.h"
 #import "SpeakersViewController.h"
+#import "ProfileTabBarController.h"
+#import "AttendeeDTO.h"
 
 @interface SidebarTableViewController ()
 
@@ -96,6 +98,14 @@
         ExhibitorsViewController *exhibitorsController = [navController childViewControllers].firstObject;
         exhibitorsController.exhibitors = [[DBHandler getDB] getAllExhibitors];
         NSLog(@"===== EX COUNT: %i", [exhibitorsController.exhibitors count]);
+    }
+    else if ([segue.identifier isEqualToString:@"profileSeg"]) {
+        UINavigationController *navController = segue.destinationViewController;
+        ProfileTabBarController *profileController = [navController childViewControllers].firstObject;
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        NSData* userData = [userDefaults objectForKey:@"user"];
+        AttendeeDTO* user = [NSKeyedUnarchiver unarchiveObjectWithData:userData];
+        profileController.attendee = user;
     }
 }
 

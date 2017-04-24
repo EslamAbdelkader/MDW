@@ -779,9 +779,38 @@
                     <view key="view" contentMode="scaleToFill" id="1Z1-Jt-CZg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="rDF-5e-JdK">
+                                <rect key="frame" x="96" y="101" width="128" height="128"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mcz-nX-hep">
+                                <rect key="frame" x="20" y="237" width="280" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iq6-oP-xNU">
+                                <rect key="frame" x="20" y="305" width="280" height="54"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Organization" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Byz-zi-PeL">
+                                <rect key="frame" x="20" y="361" width="280" height="59"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Info" image="info" id="Y3S-21-gJY"/>
+                    <connections>
+                        <outlet property="nameLbl" destination="Mcz-nX-hep" id="BK7-Fq-13e"/>
+                        <outlet property="orgLbl" destination="Byz-zi-PeL" id="8Hj-lS-Pn0"/>
+                        <outlet property="profileImg" destination="rDF-5e-JdK" id="smv-xd-dju"/>
+                        <outlet property="titleLbl" destination="Iq6-oP-xNU" id="uVV-Ko-AGe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p2V-CP-MZJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -819,6 +848,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="My Ticket" image="ticket" id="WTi-8W-C5P"/>
                     <connections>
+                        <outlet property="barcodeImg" destination="0lJ-KR-z5m" id="rNE-bZ-uOW"/>
                         <outlet property="qrImage" destination="0lJ-KR-z5m" id="coa-lY-M8c"/>
                     </connections>
                 </viewController>
@@ -837,9 +867,42 @@
                     <view key="view" contentMode="scaleToFill" id="bCO-dN-IlF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="myContactBackground" translatesAutoresizingMaskIntoConstraints="NO" id="fyB-KV-5QD">
+                                <rect key="frame" x="20" y="72" width="280" height="427"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="823-Fe-nz0">
+                                <rect key="frame" x="64" y="111" width="175" height="158"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Phone" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bo1-hH-Lsx">
+                                <rect key="frame" x="42" y="333" width="219" height="30"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="phoneIcon" translatesAutoresizingMaskIntoConstraints="NO" id="NVC-Tv-6Gg">
+                                <rect key="frame" x="42" y="333" width="31" height="30"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="emailIcon" translatesAutoresizingMaskIntoConstraints="NO" id="cdn-gv-ted">
+                                <rect key="frame" x="42" y="295" width="31" height="30"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTF-fS-q3e">
+                                <rect key="frame" x="42" y="295" width="219" height="30"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Contact me" image="contact" id="oTG-B8-K5b"/>
+                    <connections>
+                        <outlet property="emailLbl" destination="fTF-fS-q3e" id="Mv4-WU-cLp"/>
+                        <outlet property="phoneLbl" destination="bo1-hH-Lsx" id="Irb-zQ-L3W"/>
+                        <outlet property="qrImg" destination="823-Fe-nz0" id="Zeu-a3-IKY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bU3-YJ-XjT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -850,6 +913,7 @@
         <image name="agenda" width="65" height="65"/>
         <image name="allDays" width="30" height="29"/>
         <image name="contact" width="30" height="30"/>
+        <image name="emailIcon" width="61" height="60"/>
         <image name="exihiptors" width="65" height="65"/>
         <image name="firstDay" width="30" height="30"/>
         <image name="footer" width="130" height="73"/>
@@ -859,8 +923,10 @@
         <image name="loginHeader" width="372" height="125"/>
         <image name="logout" width="65" height="65"/>
         <image name="menu.png" width="22" height="22"/>
+        <image name="myContactBackground" width="501" height="678"/>
         <image name="myTicketBackground" width="331" height="607"/>
         <image name="myagenda" width="65" height="65"/>
+        <image name="phoneIcon" width="62" height="61"/>
         <image name="profile" width="65" height="65"/>
         <image name="reveal-icon" width="22" height="17"/>
         <image name="secondDay" width="30" height="30"/>
