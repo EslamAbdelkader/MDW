@@ -90,7 +90,16 @@
     }
     
     NSString * htmlString = currSession.name;
-    NSAttributedString * attrStr = [[NSAttributedString alloc] initWithData:[htmlString dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
+    NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithData:[htmlString dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
+    
+    NSRange range = (NSRange){0, [attrStr length]};
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    
+    [attrStr enumerateAttribute:NSFontAttributeName inRange:range options:NSAttributedStringEnumerationLongestEffectiveRangeNotRequired usingBlock:^(id value, NSRange range, BOOL *stop) {
+        UIFont *replacementFont =  [UIFont systemFontOfSize:14];
+        [attrStr addAttribute:NSFontAttributeName value:replacementFont range:range];
+        [attrStr addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:range];
+    }];
     title.attributedText = attrStr;
     
     location.text = currSession.location;

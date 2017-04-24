@@ -16,18 +16,15 @@
 -(void)viewDidLoad{
     [super viewDidLoad];
     [self.storyboard instantiateViewControllerWithIdentifier:@"sessionDetailsView"];
-    
-    NSString *htmlString = _session.name;
-    NSAttributedString *attrStr = [[NSAttributedString alloc] initWithData:[htmlString dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
-    _titleLbl.attributedText = attrStr;
+    speakers = _session.speakers;
     
     NSDate *start = [NSDate dateWithTimeIntervalSince1970:_session.startDate /1000];
     NSDate *end = [NSDate dateWithTimeIntervalSince1970:_session.endDate /1000];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"EEE, dd MMM"];
-     NSString *formattedDate = [dateFormatter stringFromDate:start];
-    _dateLbl.text = formattedDate;
+    
+    _dateLbl.text = [dateFormatter stringFromDate:start];
     
     [dateFormatter setDateFormat:@"hh:mm a"];
     NSString *formattedStart = [dateFormatter stringFromDate:start];
@@ -41,11 +38,25 @@
     
     _locationLbl.text = _session.location;
     
-    htmlString = _session.desc;
-    attrStr = [[NSAttributedString alloc] initWithData:[htmlString dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
-    _descLbl.attributedText = attrStr;
+    NSString *htmlString = _session.name;
+    NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithData:[htmlString dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
     
-    speakers = _session.speakers;
+    NSRange range = (NSRange){0, [attrStr length]};
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    
+    [paragraphStyle setAlignment:NSTextAlignmentCenter];
+    
+    [attrStr enumerateAttribute:NSFontAttributeName inRange:range options:NSAttributedStringEnumerationLongestEffectiveRangeNotRequired usingBlock:^(id value, NSRange range, BOOL *stop) {
+        UIFont *replacementFont =  [UIFont systemFontOfSize:18];
+        [attrStr addAttribute:NSFontAttributeName value:replacementFont range:range];
+        [attrStr addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:range];
+    }];
+    
+    _titleLbl.attributedText = attrStr;
+    
+    htmlString = _session.desc;
+    [_descWebview loadHTMLString:[NSString stringWithFormat:@"<div align='center'>%@<div>", _session.desc]
+    baseURL:nil];
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{

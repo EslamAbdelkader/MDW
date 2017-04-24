@@ -23,7 +23,7 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *locationLbl;
 
-@property (strong, nonatomic) IBOutlet UILabel *descLbl;
+@property (strong, nonatomic) IBOutlet UIWebView *descWebview;
 
 @property (strong, nonatomic) IBOutlet UITableView *speakersTable;
 
