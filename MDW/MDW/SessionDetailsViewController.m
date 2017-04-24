@@ -7,14 +7,19 @@
 //
 
 #import "SessionDetailsViewController.h"
+#import "SpeakerDTO.h"
 
-@implementation SessionDetailsViewController
+@implementation SessionDetailsViewController{
+    NSMutableArray *speakers;
+}
 
 -(void)viewDidLoad{
     [super viewDidLoad];
     [self.storyboard instantiateViewControllerWithIdentifier:@"sessionDetailsView"];
     
-    _titleLbl.text = _session.name;
+    NSString *htmlString = _session.name;
+    NSAttributedString *attrStr = [[NSAttributedString alloc] initWithData:[htmlString dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
+    _titleLbl.attributedText = attrStr;
     
     NSDate *start = [NSDate dateWithTimeIntervalSince1970:_session.startDate /1000];
     NSDate *end = [NSDate dateWithTimeIntervalSince1970:_session.endDate /1000];
@@ -36,11 +41,44 @@
     
     _locationLbl.text = _session.location;
     
-    NSString *htmlString = _session.desc;
-    NSAttributedString *attrStr = [[NSAttributedString alloc] initWithData:[htmlString dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
+    htmlString = _session.desc;
+    attrStr = [[NSAttributedString alloc] initWithData:[htmlString dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
     _descLbl.attributedText = attrStr;
     
-    //handle speakers in table
+    speakers = _session.speakers;
+}
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return [speakers count];
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"speakerSessionCell" forIndexPath:indexPath];
+    
+    SpeakerDTO *speaker = [speakers objectAtIndex:indexPath.row];
+    
+    UIImageView *img = [cell viewWithTag:1];
+    UILabel *name = [cell viewWithTag:2];
+    UILabel *title = [cell viewWithTag:3];
+    
+    //set image
+    
+    name.text = [[speaker.firstName stringByAppendingString:@" "] stringByAppendingString:speaker.lastName];
+    title.text = speaker.title;
+    
+    return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+//    SessionDTO *session = [sessionsList objectAtIndex:indexPath.row];
+//    SessionDetailsViewController *detailsView = [self.storyboard instantiateViewControllerWithIdentifier:@"sessionDetailsView"];
+//    detailsView.session = session;
+//    [self.navigationController pushViewController:detailsView animated:YES];
 }
 
 @end
