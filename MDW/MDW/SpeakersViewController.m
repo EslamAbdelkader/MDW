@@ -8,6 +8,8 @@
 
 #import "SpeakersViewController.h"
 #import "SWRevealViewController.h"
+#import "SpeakerDTO.h"
+#import "SpeakerDetailsViewController.h"
 
 @implementation SpeakersViewController
 
@@ -34,6 +36,40 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return [_speakers count];
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SpeakerCell" forIndexPath:indexPath];
+    
+    SpeakerDTO *speaker = [_speakers objectAtIndex:indexPath.row];
+    
+    UIImageView *img = [cell viewWithTag:1];
+    UILabel *name = [cell viewWithTag:2];
+    UILabel *title = [cell viewWithTag:3];
+    
+    //set image
+    
+    name.text =[[speaker.firstName stringByAppendingString:@" "] stringByAppendingString:speaker.lastName];
+    
+    title.text = speaker.title;
+    
+    return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    SpeakerDTO *speaker = [_speakers objectAtIndex:indexPath.row];
+    SpeakerDetailsViewController *detailsView = [self.storyboard instantiateViewControllerWithIdentifier:@"speakerDetails"];
+    detailsView.speaker = speaker;
+    [self.navigationController pushViewController:detailsView animated:YES];
 }
 
 @end

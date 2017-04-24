@@ -8,6 +8,7 @@
 
 #import "SessionDetailsViewController.h"
 #import "SpeakerDTO.h"
+#import "SpeakerDetailsViewController.h"
 
 @implementation SessionDetailsViewController{
     NSMutableArray *speakers;
@@ -86,10 +87,10 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-//    SessionDTO *session = [sessionsList objectAtIndex:indexPath.row];
-//    SessionDetailsViewController *detailsView = [self.storyboard instantiateViewControllerWithIdentifier:@"sessionDetailsView"];
-//    detailsView.session = session;
-//    [self.navigationController pushViewController:detailsView animated:YES];
+    SpeakerDTO *speaker = [speakers objectAtIndex:indexPath.row];
+    SpeakerDetailsViewController *detailsView = [self.storyboard instantiateViewControllerWithIdentifier:@"speakerDetails"];
+    detailsView.speaker = speaker;
+    [self.navigationController pushViewController:detailsView animated:YES];
 }
 
 @end

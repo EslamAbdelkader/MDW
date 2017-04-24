@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SpeakersViewController : UITableViewController
+@interface SpeakersViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 
