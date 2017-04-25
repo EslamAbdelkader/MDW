@@ -48,6 +48,8 @@
 -(NSMutableArray *) getAllSpeakers;
 -(NSMutableArray *) getAllExhibitors;
 
+-(void) updateSessionWithId: (int) sessionID toStatus: (int) status;
+
 -(void) dropDatabase;
 
 @end

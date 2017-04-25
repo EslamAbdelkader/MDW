@@ -675,6 +675,12 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="adf-2z-acA">
                                         <rect key="frame" x="136" y="116" width="49" height="46"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h8B-Dw-E24">
+                                        <rect key="frame" x="136" y="116" width="49" height="46"/>
+                                        <connections>
+                                            <action selector="registerSession:" destination="ssN-TT-nBh" eventType="touchUpInside" id="cci-7B-lQO"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </scrollView>
                         </subviews>
@@ -685,6 +691,7 @@
                         <outlet property="descWebview" destination="Psh-KV-0XZ" id="eDn-qz-j2e"/>
                         <outlet property="locationLbl" destination="jrL-TJ-dMY" id="9r7-qw-UOB"/>
                         <outlet property="speakersTable" destination="vyT-9X-Okb" id="ElY-Dh-bgM"/>
+                        <outlet property="starImageView" destination="adf-2z-acA" id="Ld5-qi-ZOG"/>
                         <outlet property="starImg" destination="adf-2z-acA" id="zYP-LI-lgJ"/>
                         <outlet property="timeLbl" destination="9Pd-tR-aIo" id="62L-tN-ZGb"/>
                         <outlet property="titleLbl" destination="p5k-5z-M0w" id="M1D-Mi-qbi"/>

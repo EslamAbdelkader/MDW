@@ -10,6 +10,8 @@
 #import "SessionDTO.h"
 
 @interface SessionDetailsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UIImageView *starImageView;
+- (IBAction)registerSession:(id)sender;
 
 @property SessionDTO *session;
 
@@ -26,5 +28,11 @@
 @property (strong, nonatomic) IBOutlet UIWebView *descWebview;
 
 @property (strong, nonatomic) IBOutlet UITableView *speakersTable;
+
+@property UIAlertView *alert;
+
+@property UIAlertView *connectionAlert;
+
+@property UIAlertView *serviceAlert;
 
 @end

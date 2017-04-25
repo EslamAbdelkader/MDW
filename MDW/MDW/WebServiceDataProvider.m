@@ -398,4 +398,65 @@
     
 }
 
++(void)registerSessionIntoViewController:(SessionDetailsViewController *)viewController{
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+    
+    //Change Mail To User Mail From NSUserDefaults
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSData* userData = [userDefaults objectForKey:@"user"];
+    AttendeeDTO* user = [NSKeyedUnarchiver unarchiveObjectWithData:userData];
+    NSString* email = user.email;
+    
+    int sessionId = viewController.session.id;
+    int status = viewController.session.status;
+    
+    NSURLRequest *request = [URLProvider getRegisterSessionRequestByUsername:email sessionId:sessionId status:status];
+    
+    NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+        if (error) {
+            NSLog(@"Error: %@", error);
+            [viewController.connectionAlert show];
+        } else {
+            
+            if([[responseObject objectForKey:@"status"]isEqualToString:@"view.success"]){
+                NSLog(@"%@",[responseObject objectForKey:@"result"]);
+                NSLog(@"%@",[[responseObject objectForKey:@"result"] valueForKey:@"oldSessionId"]);
+                
+                if([[[responseObject objectForKey:@"result"] valueForKey:@"oldSessionId"] integerValue] == 0){
+                    int resultStatus = [[[responseObject objectForKey:@"result"] valueForKey:@"status"] integerValue];
+                    switch (resultStatus) {
+                        case 0:
+                            viewController.starImg.image = [UIImage imageNamed:@"star"];
+                            break;
+                        case 1:
+                            viewController.starImg.image = [UIImage imageNamed:@"sessionpending"];
+                            break;
+                        case 2:
+                            viewController.starImg.image = [UIImage imageNamed:@"sessionapproved"];
+                            break;
+                        default:
+                            break;
+                    }
+                    [[DBHandler getDB] updateSessionWithId:sessionId toStatus:resultStatus];
+                    
+                }else{
+                    //Have Another Session At The Same Time
+                    [viewController.alert show];
+                    NSLog(@"%@",[responseObject objectForKey:@"result"]);
+                }
+                
+            }else{
+                //Status = view.failed
+                NSLog(@"Status = view.failed");
+                NSLog(@"%@",[responseObject objectForKey:@"result"]);
+                [viewController.serviceAlert show];
+            }
+        }
+    }];
+    
+    [dataTask resume];
+    
+}
+
 @end

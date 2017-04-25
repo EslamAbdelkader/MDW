@@ -10,6 +10,7 @@
 #import "SpeakerDTO.h"
 #import "SpeakerDetailsViewController.h"
 #import "UIImageView+ImageDownload.h"
+#import "WebServiceDataProvider.h"
 
 
 @implementation SessionDetailsViewController{
@@ -19,6 +20,27 @@
 -(void)viewDidLoad{
     [super viewDidLoad];
     [self.storyboard instantiateViewControllerWithIdentifier:@"sessionDetailsView"];
+    
+    _alert = [[UIAlertView alloc] initWithTitle:@"Failed to register."
+                                        message:@"You're already registered at another session at the same time."
+                                       delegate:self
+                              cancelButtonTitle:@"Cancel"
+                              otherButtonTitles:nil];
+    
+    _connectionAlert = [[UIAlertView alloc] initWithTitle:@"Connection error"
+                                               message:@"Please check your connection."
+                                              delegate:self
+                                     cancelButtonTitle:@"Cancel"
+                                     otherButtonTitles:nil];
+
+    _serviceAlert = [[UIAlertView alloc] initWithTitle:@"Service is down."
+                                               message:@"Please try again in a few seconds."
+                                              delegate:self
+                                     cancelButtonTitle:@"Cancel"
+                                     otherButtonTitles:nil];
+
+    
+    
     speakers = _session.speakers;
     
     NSDate *start = [NSDate dateWithTimeIntervalSince1970:_session.startDate /1000];
@@ -36,6 +58,20 @@
     str = [str stringByAppendingString:formattedStart];
     str = [str stringByAppendingString:@" - "];
     str = [str stringByAppendingString:formattedEnd];
+    
+    switch (_session.status) {
+        case 0:
+            _starImageView.image = [UIImage imageNamed:@"star"];
+            break;
+        case 1:
+            _starImageView.image = [UIImage imageNamed:@"sessionpending"];
+            break;
+        case 2:
+            _starImageView.image = [UIImage imageNamed:@"sessionapproved"];
+            break;
+        default:
+            break;
+    }
     
     _timeLbl.text = str;
     
@@ -96,4 +132,9 @@
     [self.navigationController pushViewController:detailsView animated:YES];
 }
 
+- (IBAction)registerSession:(id)sender {
+    
+    [WebServiceDataProvider registerSessionIntoViewController:self];
+    
+}
 @end

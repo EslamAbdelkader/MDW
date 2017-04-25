@@ -227,6 +227,17 @@ static DBHandler *dbHandler;
     [realm commitWriteTransaction];
 }
 
+-(void)updateSessionWithId:(int)sessionID toStatus:(int)status{
+    NSString *query = [NSString stringWithFormat:@"%@%d", @"id == ", sessionID];
+    SessionDTO* session = [[SessionDTO objectsWhere:query]firstObject];
+    
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    [realm beginWriteTransaction];
+    session.status = status;
+    [realm addOrUpdateObject:session];
+    [realm commitWriteTransaction];
+}
+
 -(void)dropDatabase{
     RLMRealm *realm = [RLMRealm defaultRealm];
     [realm beginWriteTransaction];

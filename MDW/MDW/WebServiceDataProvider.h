@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "ViewControllerDelegate.h"
+#import "SessionDetailsViewController.h"
 
 @interface WebServiceDataProvider : NSObject
 
@@ -17,5 +18,5 @@
 +(void) getExhibitorsIntoViewController: (id<ViewControllerDelegate>) viewController;
 +(void) setImageFromURLString: (NSString *) url intoImageView: (UIImageView *) imageView andSaveObject: (id) object;
 +(void) loginWithUserName: (NSString *) userName andPassword: (NSString *) password andViewController: (id<ViewControllerDelegate>) viewController;
-+(void) registerSessionIntoViewController: (id<ViewControllerDelegate>) viewController;
++(void) registerSessionIntoViewController: (SessionDetailsViewController *) viewController;
 @end
