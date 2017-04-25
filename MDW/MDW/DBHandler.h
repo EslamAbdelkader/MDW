@@ -27,6 +27,8 @@
 -(void) addOrUpdateSpeakers: (NSArray *) speakers;
 -(void) addOrUpdateExhibitors: (NSArray *) exhibitors;
 
+-(void)updataSpeakerImage: (NSData *) imageData forSpeakerID: (int) speakerID;
+-(void)updataExhibitorImage: (NSData *) imageData forExhibitorID: (int) exhibitorID;
 
 -(AgendaDTO *) getAgendaByDate: (long) date;
 -(SpeakerDTO *) getSpeakerById: (int) id;

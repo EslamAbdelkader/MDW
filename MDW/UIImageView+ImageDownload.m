@@ -15,7 +15,7 @@
 
 -(void)setSpeakerImageByURLString:(NSString *)url{
     NSData * data = nil;
-    NSString *query = [NSString stringWithFormat:@"%@%@", @"imageURL == ", url];
+    NSString *query = [NSString stringWithFormat:@"%@'%@'", @"imageURL = ", url];
     SpeakerDTO *speaker = [[SpeakerDTO objectsWhere:query]firstObject];
     data = speaker.image;
     
@@ -29,7 +29,7 @@
 
 -(void)setExhibitorImageByURLString:(NSString *)url{
     NSData * data = nil;
-    NSString *query = [NSString stringWithFormat:@"%@%@", @"imageURL == ", url];
+    NSString *query = [NSString stringWithFormat:@"%@'%@'", @"imageURL = ", url];
     ExhibitorDTO *exhibitor = [[ExhibitorDTO objectsWhere:query]firstObject];
     data = exhibitor.image;
     

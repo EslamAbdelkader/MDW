@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AttendeeDTO.h"
 
 @interface ProfileTabBarController : UITabBarController
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
+
+@property AttendeeDTO *attendee;
 
 @end

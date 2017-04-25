@@ -304,7 +304,7 @@
                 user.code = [result objectForKey:@"code"];
                 user.title = [result objectForKey:@"title"];
                 user.gender = [result objectForKey:@"gender"];
-//                user.birthDate = [[result objectForKey:@"birthDate"]longLongValue];
+                //                user.birthDate = [[result objectForKey:@"birthDate"]longLongValue];
                 NSLog(@"%@",user);
                 
                 //Putting into UserDefaults
@@ -339,6 +339,15 @@
 
 
 +(void)setImageFromURLString:(NSString *)url intoImageView:(UIImageView *)imageView andSaveObject: (id) object{
+    NSString *imageID;
+    
+    if([object isKindOfClass:[ExhibitorDTO class]]){
+        ExhibitorDTO* exhibitor = ((ExhibitorDTO *) object);
+        imageID = [@"" stringByAppendingFormat:@"id_%d", exhibitor.id];
+    }else if ([object isKindOfClass:[SpeakerDTO class]]){
+        SpeakerDTO* speaker = ((SpeakerDTO *) object);
+        imageID = [@"" stringByAppendingFormat:@"id_%d", speaker.id];
+    };
     
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
@@ -347,8 +356,9 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:URL];
     
     NSURLSessionDownloadTask *downloadTask = [manager downloadTaskWithRequest:request progress:nil destination:^NSURL *(NSURL *targetPath, NSURLResponse *response) {
+        
         NSURL *documentsDirectoryURL = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil];
-        return [documentsDirectoryURL URLByAppendingPathComponent:[response suggestedFilename]];
+        return [documentsDirectoryURL URLByAppendingPathComponent:imageID];
     } completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error) {
         
         //Setting ImageView
@@ -359,11 +369,11 @@
         
         //Adding In DB
         if([object isKindOfClass:[ExhibitorDTO class]]){
-            ((ExhibitorDTO *) object).image = imageData;
-            [[DBHandler getDB] addOrUpdateExhibitor:object];
+            ExhibitorDTO* exhibitor = ((ExhibitorDTO *) object);
+            [[DBHandler getDB] updataExhibitorImage:imageData forExhibitorID:exhibitor.id];
         }else if ([object isKindOfClass:[SpeakerDTO class]]){
-            ((SpeakerDTO *) object).image = imageData;
-            [[DBHandler getDB] addOrUpdateSpeaker:object];
+            SpeakerDTO* speaker = ((SpeakerDTO *) object);
+            [[DBHandler getDB] updataSpeakerImage:imageData forSpeakerID:speaker.id];
         }
         
     }];

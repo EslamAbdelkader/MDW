@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AttendeeDTO.h"
 
 @interface ProfileTicketViewController : UIViewController
+
+@property (strong, nonatomic) IBOutlet UIImageView *qrImage;
+
+@property (strong, nonatomic) IBOutlet UIImageView *barcodeImg;
 
 @end

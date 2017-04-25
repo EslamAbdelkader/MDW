@@ -10,4 +10,10 @@
 
 @interface ProfileContactsViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UIImageView *qrImg;
+
+@property (strong, nonatomic) IBOutlet UILabel *emailLbl;
+
+@property (strong, nonatomic) IBOutlet UILabel *phoneLbl;
+
 @end

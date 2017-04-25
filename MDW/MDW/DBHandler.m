@@ -205,6 +205,27 @@ static DBHandler *dbHandler;
     return allExhibitors;
 }
 
+-(void)updataSpeakerImage:(NSData *)imageData forSpeakerID:(int)speakerID{
+    NSString *query = [NSString stringWithFormat:@"%@%d", @"id == ", speakerID];
+    SpeakerDTO *speaker = [[SpeakerDTO objectsWhere:query]firstObject];
+    
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    [realm beginWriteTransaction];
+    speaker.image = imageData;
+    [realm addOrUpdateObject:speaker];
+    [realm commitWriteTransaction];
+}
+
+-(void)updataExhibitorImage:(NSData *)imageData forExhibitorID:(int)exhibitorID{
+    NSString *query = [NSString stringWithFormat:@"%@%d", @"id == ", exhibitorID];
+    ExhibitorDTO *exhibitor = [[ExhibitorDTO objectsWhere:query]firstObject];
+    
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    [realm beginWriteTransaction];
+    exhibitor.image = imageData;
+    [realm addOrUpdateObject:exhibitor];
+    [realm commitWriteTransaction];
+}
 
 -(void)dropDatabase{
     RLMRealm *realm = [RLMRealm defaultRealm];
