@@ -16,6 +16,7 @@
 #import "AttendeeDTO.h"
 #import "DBHandler.h"
 #import "SWRevealViewController.h"
+#import "ViewController.h"
 
 @implementation WebServiceDataProvider
 +(void)getAgendasIntoViewController: (id<ViewControllerDelegate>) viewController orLoginFromViewController:(UIViewController *)loginViewController {
@@ -288,6 +289,15 @@
     NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
         if (error) {
             NSLog(@"Error: %@", error);
+            
+            ViewController *myViewController = (ViewController*) viewController;
+            [myViewController.indicator stopAnimating];
+            
+            [myViewController.networkAlert show];
+            
+            [myViewController.view setUserInteractionEnabled:YES];
+            
+            
         } else {
             
             if([[responseObject objectForKey:@"status"]isEqualToString:@"view.success"]){
@@ -325,7 +335,14 @@
                 
             }else{
                 //Status = view.failed
-                NSLog(@"Status = view.failed");
+                NSLog(@"Result: %@",[responseObject objectForKey:@"result"]);
+                ViewController *myViewController = (ViewController*) viewController;
+                [myViewController.indicator stopAnimating];
+                
+                [myViewController.alert show];
+                
+                [myViewController.view setUserInteractionEnabled:YES];
+                
             }
         }
     }];

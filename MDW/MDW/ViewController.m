@@ -23,6 +23,18 @@
     bgImageView.frame = self.view.bounds;
     [self.view addSubview:bgImageView];
     [self.view sendSubviewToBack:bgImageView];
+    
+    _alert = [[UIAlertView alloc] initWithTitle:@"Failed to login"
+                                                    message:@"Wrong username or password."
+                                                   delegate:self
+                                          cancelButtonTitle:@"Cancel"
+                                          otherButtonTitles:nil];
+    
+    _networkAlert = [[UIAlertView alloc] initWithTitle:@"Connection error"
+                                        message:@"Please check your connection."
+                                       delegate:self
+                              cancelButtonTitle:@"Cancel"
+                              otherButtonTitles:nil];
 }
 
 
@@ -38,6 +50,8 @@
     
 //    SWRevealViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"revealController"];
     [WebServiceDataProvider loginWithUserName:email andPassword:pass andViewController:self];
+    [_indicator startAnimating];
+    [self.view setUserInteractionEnabled:NO];
     //[self presentViewController:vc animated:YES completion:nil];
 }
 

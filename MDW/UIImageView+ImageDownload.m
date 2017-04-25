@@ -22,6 +22,7 @@
     if(data){
         self.image = [UIImage imageWithData:data];
     }else{
+        self.image = [UIImage imageNamed:@"speaker"];
         [WebServiceDataProvider setImageFromURLString:url intoImageView:self andSaveObject:speaker];
     }
     

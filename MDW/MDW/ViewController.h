@@ -16,6 +16,11 @@
 
 @property (strong, nonatomic) IBOutlet UITextField *passwordTxt;
 
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *indicator;
+
+@property UIAlertView *alert;
+
+@property UIAlertView *networkAlert;
 
 @end
 
