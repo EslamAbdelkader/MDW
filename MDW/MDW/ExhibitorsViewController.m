@@ -67,7 +67,9 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    //make it open external link
+    SpeakerDTO *ex = [_exhibitors objectAtIndex:indexPath.row];
+    //NSString *url = ex.
+    //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
 }
 
 -(void)viewWillAppear:(BOOL)animated{

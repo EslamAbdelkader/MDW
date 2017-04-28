@@ -22,5 +22,7 @@
 
 @property UIAlertView *networkAlert;
 
+@property (weak, nonatomic) IBOutlet UILabel *registerLbl;
+
 @end
 

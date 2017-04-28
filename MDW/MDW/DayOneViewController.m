@@ -28,6 +28,12 @@
     NSLog(@"=====DAY 1 SESSIONS: %i", firstDayAgenda.sessions.count);
     [sessionsList addObjectsFromArray:firstDayAgenda.sessions];
     
+    UIImageView *bgImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background"]];
+    bgImageView.frame = self.view.bounds;
+    [self.view addSubview:bgImageView];
+    [self.view sendSubviewToBack:bgImageView];
+    //opaque is set to false, bg is set to clearcolor
+    
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -40,6 +46,9 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DayOneCell" forIndexPath:indexPath];
+    
+    cell.contentView.backgroundColor = [UIColor clearColor];
+    cell.backgroundColor = [UIColor clearColor];
     
     SessionDTO *currSession = [sessionsList objectAtIndex:indexPath.row];
     

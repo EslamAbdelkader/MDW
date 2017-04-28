@@ -36,6 +36,15 @@
                               cancelButtonTitle:@"Cancel"
                               otherButtonTitles:nil];
     
+    _registerLbl.userInteractionEnabled = YES;
+    UITapGestureRecognizer *tapGesture = \
+    [[UITapGestureRecognizer alloc]
+     initWithTarget:self action:@selector(didTapLabelWithGesture:)];
+    [_registerLbl addGestureRecognizer:tapGesture];
+}
+
+-(void) didTapLabelWithGesture:(UITapGestureRecognizer *)tapGesture{
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://mobiledeveloperweekend.net/attendee/registration.htm"]];
 }
 
 

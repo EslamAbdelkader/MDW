@@ -26,7 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    menuItems = @[@"title", @"agenda", @"myAgenda", @"speakers", @"exhibitors", @"profile", @"logout"];
+    menuItems = @[@"title", @"agenda", @"myAgenda", @"speakers", @"exhibitors", @"profile", @"logout", @"poweredBy"];
     
     UIImageView *bgImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"leftSideMenuBackground"]];
     bgImageView.frame = self.view.bounds;
@@ -113,10 +113,18 @@
     
     switch (indexPath.row){
         case 0:
-            return 150.0; // first row is 150pt high
-
+            return 120.0;
+        case 7:
+            return 120.0;
     }
     return 50.0; // all other rows are 50pt high
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    switch (indexPath.row){
+        case 7:
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://jets.iti.gov.eg"]];
+    }
 }
 
 

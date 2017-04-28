@@ -22,32 +22,6 @@
     self.title = @"All Days";
     [self.storyboard instantiateViewControllerWithIdentifier:@"allDaysView"];
     
-//    sessionsList = [NSMutableArray new];
-//    SessionDTO *session1 = [SessionDTO new];
-//    session1.startDate = 1460617200000;
-//    session1.endDate = 1460620800000;
-//    //session1.name = @"Keynote Session";
-//    session1.name = @"<Font name=\"verdana\" size=\"4\" color=\"Blue\">Registration</Font>";
-//    session1.location = @"Main Hall";
-//    session1.sessionType = @"Session";
-//    
-//    SessionDTO *session2 = [SessionDTO new];
-//    session2.startDate = 1460617200000;
-//    session2.endDate = 1460620800000;
-//    session2.name = @"Workshop";
-//    session2.location = @"1022";
-//    session2.sessionType = @"Workshop";
-//    
-//    SessionDTO *session3 = [SessionDTO new];
-//    session3.startDate = 1460617200000;
-//    session3.endDate = 1460620800000;
-//    session3.name = @"Break";
-//    session3.sessionType = @"Break";
-//    
-//    [sessionsList addObject:session1];
-//    [sessionsList addObject:session2];
-//    [sessionsList addObject:session3];
-    
     sessionsList = [NSMutableArray new];
     
     AgendaTabBarController *tabCont = self.tabBarController;
@@ -56,6 +30,11 @@
         
     }
     
+    UIImageView *bgImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background"]];
+    bgImageView.frame = self.view.bounds;
+    [self.view addSubview:bgImageView];
+    [self.view sendSubviewToBack:bgImageView];
+    //opaque is set to false, bg is set to clearcolor
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -68,6 +47,9 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AgendaCell" forIndexPath:indexPath];
+    
+    cell.contentView.backgroundColor = [UIColor clearColor];
+    cell.backgroundColor = [UIColor clearColor];
     
     SessionDTO *currSession = [sessionsList objectAtIndex:indexPath.row];
     
