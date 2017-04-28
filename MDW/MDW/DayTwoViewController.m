@@ -6,27 +6,27 @@
 //  Copyright © 2017 MAD. All rights reserved.
 //
 
-#import "DayOneViewController.h"
+#import "DayTwoViewController.h"
 #import "SessionDTO.h"
 #import "SessionDetailsViewController.h"
 #import "AgendaTabBarController.h"
 #import "AgendaDTO.h"
 
-@implementation DayOneViewController{
+@implementation DayTwoViewController{
     NSMutableArray *sessionsList;
 }
 
 -(void) viewDidLoad{
     [super viewDidLoad];
     
-    [self.storyboard instantiateViewControllerWithIdentifier:@"dayOneView"];
-    
+    [self.storyboard instantiateViewControllerWithIdentifier:@"dayTwoView"];
+
     sessionsList = [NSMutableArray new];
     
     AgendaTabBarController *tabCont = self.tabBarController;
-    AgendaDTO *firstDayAgenda = tabCont.agendas[0];
-    NSLog(@"=====DAY 1 SESSIONS: %i", firstDayAgenda.sessions.count);
-    [sessionsList addObjectsFromArray:firstDayAgenda.sessions];
+    AgendaDTO *secondDayAgenda = tabCont.agendas[1];
+    NSLog(@"=====DAY 2 SESSIONS: %i", secondDayAgenda.sessions.count);
+    [sessionsList addObjectsFromArray:secondDayAgenda.sessions];
     
 }
 
@@ -39,7 +39,7 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DayOneCell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DayTwoCell" forIndexPath:indexPath];
     
     SessionDTO *currSession = [sessionsList objectAtIndex:indexPath.row];
     

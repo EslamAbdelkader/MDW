@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25DD5ACA1EB3C8750003C879 /* DayTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25DD5AC91EB3C8750003C879 /* DayTwoViewController.m */; };
+		25DD5ACD1EB3CAB80003C879 /* DayThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25DD5ACC1EB3CAB80003C879 /* DayThreeViewController.m */; };
 		446344F903AFB56BB20DF0FB /* libPods-MDW.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 32F72EE83A9F9EE57C4F6BF8 /* libPods-MDW.a */; };
 		4C1E5DF11E9E248500760766 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1E5DF01E9E248500760766 /* main.m */; };
 		4C1E5DF41E9E248500760766 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1E5DF31E9E248500760766 /* AppDelegate.m */; };
@@ -39,6 +41,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		25DD5AC81EB3C8750003C879 /* DayTwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayTwoViewController.h; sourceTree = "<group>"; };
+		25DD5AC91EB3C8750003C879 /* DayTwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayTwoViewController.m; sourceTree = "<group>"; };
+		25DD5ACB1EB3CAB80003C879 /* DayThreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayThreeViewController.h; sourceTree = "<group>"; };
+		25DD5ACC1EB3CAB80003C879 /* DayThreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayThreeViewController.m; sourceTree = "<group>"; };
 		32F72EE83A9F9EE57C4F6BF8 /* libPods-MDW.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MDW.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C1E5DF01E9E248500760766 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4C1E5DF21E9E248500760766 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -200,10 +206,14 @@
 				CC6D930B1EA2281800361E83 /* AgendaTabBarController.m */,
 				CCAFD23E1EAC6ECB002C2547 /* AllDaysViewController.h */,
 				CCAFD23F1EAC6ECB002C2547 /* AllDaysViewController.m */,
-				CCAFD2461EACB9EC002C2547 /* SessionDetailsViewController.h */,
-				CCAFD2471EACB9EC002C2547 /* SessionDetailsViewController.m */,
 				CC80FF9B1EB0DDF900D360B7 /* DayOneViewController.h */,
 				CC80FF9C1EB0DDF900D360B7 /* DayOneViewController.m */,
+				25DD5ACB1EB3CAB80003C879 /* DayThreeViewController.h */,
+				25DD5ACC1EB3CAB80003C879 /* DayThreeViewController.m */,
+				25DD5AC81EB3C8750003C879 /* DayTwoViewController.h */,
+				25DD5AC91EB3C8750003C879 /* DayTwoViewController.m */,
+				CCAFD2461EACB9EC002C2547 /* SessionDetailsViewController.h */,
+				CCAFD2471EACB9EC002C2547 /* SessionDetailsViewController.m */,
 			);
 			name = Agenda;
 			sourceTree = "<group>";
@@ -404,10 +414,12 @@
 			files = (
 				CCAFD24D1EACC1D2002C2547 /* DBHandler.m in Sources */,
 				CC2B392D1E9FEC790099EEE9 /* SidebarTableViewController.m in Sources */,
+				25DD5ACD1EB3CAB80003C879 /* DayThreeViewController.m in Sources */,
 				CC6D930C1EA2281800361E83 /* AgendaTabBarController.m in Sources */,
 				CCAFD2661EACE885002C2547 /* ProfileInfoViewController.m in Sources */,
 				CCAFD2691EACE8C4002C2547 /* ProfileTicketViewController.m in Sources */,
 				CCA77D5E1EA0BAF7005C498E /* SpeakersViewController.m in Sources */,
+				25DD5ACA1EB3C8750003C879 /* DayTwoViewController.m in Sources */,
 				CCC357311EA867120057332A /* ProfileTabBarController.m in Sources */,
 				CCAFD2631EACC3CE002C2547 /* SpeakerDTO.m in Sources */,
 				CCAFD2531EACC20B002C2547 /* WebServiceDataProvider.m in Sources */,
