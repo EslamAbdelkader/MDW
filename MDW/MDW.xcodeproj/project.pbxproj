@@ -17,7 +17,6 @@
 		CC2B392D1E9FEC790099EEE9 /* SidebarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2B392C1E9FEC790099EEE9 /* SidebarTableViewController.m */; };
 		CC6D930C1EA2281800361E83 /* AgendaTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6D930B1EA2281800361E83 /* AgendaTabBarController.m */; };
 		CC6ECA151EAD00A00072D282 /* UIImageView+ImageDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6ECA141EAD00A00072D282 /* UIImageView+ImageDownload.m */; };
-		CC80FF9D1EB0DDF900D360B7 /* DayOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC80FF9C1EB0DDF900D360B7 /* DayOneViewController.m */; };
 		CCA77D5E1EA0BAF7005C498E /* SpeakersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA77D5D1EA0BAF7005C498E /* SpeakersViewController.m */; };
 		CCA77D611EA0BC30005C498E /* ExhibitorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA77D601EA0BC30005C498E /* ExhibitorsViewController.m */; };
 		CCAFD2401EAC6ECB002C2547 /* AllDaysViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCAFD23F1EAC6ECB002C2547 /* AllDaysViewController.m */; };
