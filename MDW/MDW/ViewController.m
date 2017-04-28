@@ -35,6 +35,7 @@
                                        delegate:self
                               cancelButtonTitle:@"Cancel"
                               otherButtonTitles:nil];
+    
 }
 
 
@@ -54,5 +55,21 @@
     [self.view setUserInteractionEnabled:NO];
     //[self presentViewController:vc animated:YES completion:nil];
 }
+
+
+/* Auto Login - BUG : Login Already Appeared
+-(void)viewDidAppear:(BOOL)animated{
+    //Checking for NSUserDefaults
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSData* userData = [userDefaults objectForKey:@"user"];
+    if(userData != nil){
+        NSLog(@"Let him in");
+        SWRevealViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"revealController"];
+        
+        
+        [self presentViewController:vc animated:YES completion:nil];
+    }
+}
+ */
 
 @end

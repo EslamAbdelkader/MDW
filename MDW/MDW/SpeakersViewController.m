@@ -11,6 +11,8 @@
 #import "SpeakerDTO.h"
 #import "SpeakerDetailsViewController.h"
 #import "UIImageView+ImageDownload.h"
+#import "WebServiceDataProvider.h"
+#import "DBHandler.h"
 
 @implementation SpeakersViewController
 
@@ -73,5 +75,16 @@
     detailsView.speaker = speaker;
     [self.navigationController pushViewController:detailsView animated:YES];
 }
+
+-(void)viewWillAppear:(BOOL)animated{
+    [self refreshTable];
+    [WebServiceDataProvider getSpeakersIntoViewController:self];
+}
+
+-(void)refreshTable{
+    _speakers = [[DBHandler getDB] getAllSpeakers];
+    [self.tableView reloadData];
+}
+
 
 @end

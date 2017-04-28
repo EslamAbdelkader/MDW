@@ -137,6 +137,7 @@
 				CCAFD2411EAC727D002C2547 /* Main.storyboard */,
 				CCAFD2451EAC910E002C2547 /* Profile */,
 				CC94D9541EA3755C0007B87E /* Services */,
+				CCAFD2431EAC8FE9002C2547 /* Speakers */,
 				CCAFD2491EACBE18002C2547 /* SidebarTableViewController */,
 				4C1E5DEF1E9E248500760766 /* Supporting Files */,
 				CC2B39251E9FE4980099EEE9 /* SWRevealViewController */,
@@ -188,7 +189,6 @@
 				CCAFD24F1EACC20B002C2547 /* URLProvider.m */,
 				CCAFD2501EACC20B002C2547 /* WebServiceDataProvider.h */,
 				CCAFD2511EACC20B002C2547 /* WebServiceDataProvider.m */,
-				CCAFD2431EAC8FE9002C2547 /* Speakers */,
 			);
 			name = Services;
 			sourceTree = "<group>";

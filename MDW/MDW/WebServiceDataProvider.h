@@ -19,4 +19,5 @@
 +(void) setImageFromURLString: (NSString *) url intoImageView: (UIImageView *) imageView andSaveObject: (id) object;
 +(void) loginWithUserName: (NSString *) userName andPassword: (NSString *) password andViewController: (id<ViewControllerDelegate>) viewController;
 +(void) registerSessionIntoViewController: (SessionDetailsViewController *) viewController;
++(void) setProfileImageIntoImageView: (UIImageView *) imageView;
 @end

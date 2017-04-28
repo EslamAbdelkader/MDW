@@ -129,7 +129,7 @@
                 //Replace array with agendaDTOS
                 //Refresh Table
                 if(viewController){
-                    [viewController refreshTableUsingArray:agendaDTOS];
+                    [viewController refreshTable];
                 }else{
                     
                     SWRevealViewController *vc = [loginViewController.storyboard instantiateViewControllerWithIdentifier:@"revealController"];
@@ -202,7 +202,7 @@
                 [dbHandler addOrUpdateSpeakers:speakers];
                 
                 //Refresh Array, Reload Table.
-                [viewController refreshTableUsingArray:speakers];
+                [viewController refreshTable];
                 
                 
             }else{
@@ -234,7 +234,7 @@
         } else {
             
             if([[responseObject objectForKey:@"status"]isEqualToString:@"view.success"]){
-                
+                NSLog(@"fetching data");
                 NSArray * result = [responseObject objectForKey:@"result"];
                 NSMutableArray *exhibitors = [NSMutableArray new];
                 
@@ -266,7 +266,8 @@
                 [dbHandler addOrUpdateExhibitors:exhibitors];
                 
                 //Refresh Array, Reload Table.
-                [viewController refreshTableUsingArray:exhibitors];
+                NSLog(@"refreshing");
+                [viewController refreshTable];
                 
                 
             }else{
@@ -323,10 +324,15 @@
                 [userDefaults setObject:userData forKey:@"user"];
                 [userDefaults synchronize];
                 
+                //Getting Profile Image
+                [self setProfileImageIntoImageView:nil];
+                
+                
                 //Getting Agendas
                 
                 UIViewController *myViewController = (UIViewController*) viewController;
                 [self getAgendasIntoViewController:nil orLoginFromViewController:myViewController];
+                
                 
                 //TODO
                 //Dissmiss current viewController
@@ -457,6 +463,53 @@
     
     [dataTask resume];
     
+}
+
++(void)setProfileImageIntoImageView: (UIImageView *) imageView{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSData* userData = [userDefaults objectForKey:@"user"];
+    AttendeeDTO* user = [NSKeyedUnarchiver unarchiveObjectWithData:userData];
+    NSString* url = user.imageURL;
+    NSData *userImageFromUserDefaults = user.image;
+    
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+    
+    
+    NSURL *URL = [NSURL URLWithString:url];
+    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+    
+    NSURLSessionDownloadTask *downloadTask = [manager downloadTaskWithRequest:request progress:nil destination:^NSURL *(NSURL *targetPath, NSURLResponse *response) {
+        
+        NSURL *documentsDirectoryURL = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil];
+        return [documentsDirectoryURL URLByAppendingPathComponent:@"profileImage"];
+    } completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error) {
+        
+        //Adding to userDefaults
+        NSData *imageData = [[NSData alloc] initWithContentsOfURL:filePath];
+        user.image = imageData;
+        NSData* userData = [NSKeyedArchiver archivedDataWithRootObject:user];
+        NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+        [userDefaults setObject:userData forKey:@"user"];
+        [userDefaults synchronize];
+        
+        //Setting ImageView
+        if(imageView){
+            UIImage *image = [UIImage imageWithData:imageData];
+            imageView.image = image;
+        }
+        
+    }];
+    if(![url isEqualToString:@"URL"]){
+        if(user.image){
+            if(imageView){
+                UIImage *image = [UIImage imageWithData:user.image];
+                imageView.image = image;
+            }
+        }else{
+            [downloadTask resume];
+        }
+    }
 }
 
 @end

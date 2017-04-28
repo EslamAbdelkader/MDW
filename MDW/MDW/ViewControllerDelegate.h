@@ -10,6 +10,6 @@
 
 @protocol ViewControllerDelegate <NSObject>
 
--(void) refreshTableUsingArray: (NSArray *) array;
+-(void) refreshTable;
 
 @end

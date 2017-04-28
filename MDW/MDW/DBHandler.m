@@ -116,17 +116,17 @@ static DBHandler *dbHandler;
 }
 
 -(AgendaDTO *)getDay1Agenda:(long)date{
-    long day1 = 1460584800000;
+    long day1 = 1492639200000;
     return [self getAgendaByDate:day1];
 }
 
 -(AgendaDTO *)getDay2Agenda{
-    long day1 = 1460671200000;
+    long day1 = 1492725600000;
     return [self getAgendaByDate:day1];
 }
 
 -(AgendaDTO *)getDay3Agenda{
-    long day1 = 1460757600000;
+    long day1 = 1492812000000;
     return [self getAgendaByDate:day1];
 
 }

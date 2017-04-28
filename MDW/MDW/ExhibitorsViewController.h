@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ViewControllerDelegate.h"
 
-@interface ExhibitorsViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
+@interface ExhibitorsViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource, ViewControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 

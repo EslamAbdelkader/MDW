@@ -10,6 +10,8 @@
 #import "SWRevealViewController.h"
 #import "ExhibitorDTO.h"
 #import "UIImageView+ImageDownload.h"
+#import "WebServiceDataProvider.h"
+#import "DBHandler.h"
 
 @implementation ExhibitorsViewController
 
@@ -67,6 +69,18 @@
     
     //make it open external link
 }
+
+-(void)viewWillAppear:(BOOL)animated{
+    [self refreshTable];
+    [WebServiceDataProvider getExhibitorsIntoViewController:self];
+}
+
+-(void)refreshTable{
+    _exhibitors = [[DBHandler getDB] getAllExhibitors];
+    [self.tableView reloadData];
+}
+
+
 
 
 

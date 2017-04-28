@@ -9,6 +9,7 @@
 #import "ProfileInfoViewController.h"
 #import "ProfileTabBarController.h"
 #import "AttendeeDTO.h"
+#import "WebServiceDataProvider.h"
 
 @implementation ProfileInfoViewController{
     AttendeeDTO *attendee;
@@ -27,6 +28,9 @@
     _titleLbl.text = attendee.title;
     
     _orgLbl.text = attendee.companyName;
+    
+    [WebServiceDataProvider setProfileImageIntoImageView:_profileImg];
+    
 }
 
 @end
