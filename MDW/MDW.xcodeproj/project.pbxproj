@@ -17,6 +17,7 @@
 		CC2B392D1E9FEC790099EEE9 /* SidebarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2B392C1E9FEC790099EEE9 /* SidebarTableViewController.m */; };
 		CC6D930C1EA2281800361E83 /* AgendaTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6D930B1EA2281800361E83 /* AgendaTabBarController.m */; };
 		CC6ECA151EAD00A00072D282 /* UIImageView+ImageDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6ECA141EAD00A00072D282 /* UIImageView+ImageDownload.m */; };
+		CC80FF9D1EB0DDF900D360B7 /* DayOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC80FF9C1EB0DDF900D360B7 /* DayOneViewController.m */; };
 		CCA77D5E1EA0BAF7005C498E /* SpeakersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA77D5D1EA0BAF7005C498E /* SpeakersViewController.m */; };
 		CCA77D611EA0BC30005C498E /* ExhibitorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA77D601EA0BC30005C498E /* ExhibitorsViewController.m */; };
 		CCAFD2401EAC6ECB002C2547 /* AllDaysViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCAFD23F1EAC6ECB002C2547 /* AllDaysViewController.m */; };
@@ -57,6 +58,8 @@
 		CC6D930B1EA2281800361E83 /* AgendaTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgendaTabBarController.m; sourceTree = "<group>"; };
 		CC6ECA131EAD00A00072D282 /* UIImageView+ImageDownload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImageView+ImageDownload.h"; path = "../UIImageView+ImageDownload.h"; sourceTree = "<group>"; };
 		CC6ECA141EAD00A00072D282 /* UIImageView+ImageDownload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+ImageDownload.m"; path = "../UIImageView+ImageDownload.m"; sourceTree = "<group>"; };
+		CC80FF9B1EB0DDF900D360B7 /* DayOneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayOneViewController.h; sourceTree = "<group>"; };
+		CC80FF9C1EB0DDF900D360B7 /* DayOneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayOneViewController.m; sourceTree = "<group>"; };
 		CCA77D5C1EA0BAF7005C498E /* SpeakersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakersViewController.h; sourceTree = "<group>"; };
 		CCA77D5D1EA0BAF7005C498E /* SpeakersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakersViewController.m; sourceTree = "<group>"; };
 		CCA77D5F1EA0BC30005C498E /* ExhibitorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExhibitorsViewController.h; sourceTree = "<group>"; };
@@ -199,6 +202,8 @@
 				CCAFD23F1EAC6ECB002C2547 /* AllDaysViewController.m */,
 				CCAFD2461EACB9EC002C2547 /* SessionDetailsViewController.h */,
 				CCAFD2471EACB9EC002C2547 /* SessionDetailsViewController.m */,
+				CC80FF9B1EB0DDF900D360B7 /* DayOneViewController.h */,
+				CC80FF9C1EB0DDF900D360B7 /* DayOneViewController.m */,
 			);
 			name = Agenda;
 			sourceTree = "<group>";
@@ -406,6 +411,7 @@
 				CCC357311EA867120057332A /* ProfileTabBarController.m in Sources */,
 				CCAFD2631EACC3CE002C2547 /* SpeakerDTO.m in Sources */,
 				CCAFD2531EACC20B002C2547 /* WebServiceDataProvider.m in Sources */,
+				CC80FF9D1EB0DDF900D360B7 /* DayOneViewController.m in Sources */,
 				CCAFD2621EACC3CE002C2547 /* SessionDTO.m in Sources */,
 				CCAFD26C1EACE8E5002C2547 /* ProfileContactsViewController.m in Sources */,
 				4C1E5DF71E9E248500760766 /* ViewController.m in Sources */,
