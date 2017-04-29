@@ -10,4 +10,6 @@
 
 @interface AllDaysViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 @end

@@ -14,6 +14,7 @@
 
 @implementation AllDaysViewController{
     NSMutableArray *sessionsList;
+    UIRefreshControl *refreshControl;
 }
 
 -(void) viewDidLoad{
@@ -21,6 +22,13 @@
     
     self.title = @"All Days";
     [self.storyboard instantiateViewControllerWithIdentifier:@"allDaysView"];
+    
+    refreshControl = [[UIRefreshControl alloc] init];
+    NSAttributedString *text = [[NSAttributedString alloc]initWithString:@"Refreshing.."];
+    [refreshControl setAttributedTitle:text];
+    [refreshControl setBackgroundColor:[UIColor orangeColor]];
+    [refreshControl addTarget:self action:@selector(refreshAgenda) forControlEvents:UIControlEventValueChanged];
+    [self.tableView  addSubview:refreshControl];
     
     sessionsList = [NSMutableArray new];
     
@@ -35,6 +43,12 @@
     [self.view addSubview:bgImageView];
     [self.view sendSubviewToBack:bgImageView];
     //opaque is set to false, bg is set to clearcolor
+}
+
+-(void) refreshAgenda{
+    //get sessions from service
+    [self.tableView reloadData];
+    [refreshControl endRefreshing];
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
