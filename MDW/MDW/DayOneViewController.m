@@ -11,9 +11,14 @@
 #import "SessionDetailsViewController.h"
 #import "AgendaTabBarController.h"
 #import "AgendaDTO.h"
+#import "WebServiceDataProvider.h"
+#import "DBHandler.h"
 
 @implementation DayOneViewController{
     NSMutableArray *sessionsList;
+    UIRefreshControl *refreshControl;
+    AgendaTabBarController *tabCont;
+    NSString *agendaType;
 }
 
 -(void) viewDidLoad{
@@ -21,10 +26,19 @@
     
     [self.storyboard instantiateViewControllerWithIdentifier:@"dayOneView"];
     
+    refreshControl = [[UIRefreshControl alloc] init];
+    NSAttributedString *text = [[NSAttributedString alloc]initWithString:@"Refreshing.."];
+    [refreshControl setAttributedTitle:text];
+    [refreshControl setBackgroundColor:[UIColor orangeColor]];
+    [refreshControl addTarget:self action:@selector(refreshAgenda) forControlEvents:UIControlEventValueChanged];
+    [self.tableView  addSubview:refreshControl];
+    
     sessionsList = [NSMutableArray new];
     
-    AgendaTabBarController *tabCont = self.tabBarController;
+    tabCont = self.tabBarController;
     AgendaDTO *firstDayAgenda = tabCont.agendas[0];
+    agendaType = tabCont.agendaType;
+    
     NSLog(@"=====DAY 1 SESSIONS: %i", firstDayAgenda.sessions.count);
     [sessionsList addObjectsFromArray:firstDayAgenda.sessions];
     
@@ -34,6 +48,30 @@
     [self.view sendSubviewToBack:bgImageView];
     //opaque is set to false, bg is set to clearcolor
     
+}
+
+-(void) refreshAgenda{
+    //get sessions from service
+    [WebServiceDataProvider getAgendasIntoViewController: self
+                               orLoginFromViewController:nil];
+}
+
+-(void) refreshTable{
+    NSLog(@"----------------------------------------%@", agendaType);
+    if ([agendaType isEqualToString:@"agenda"]) {
+        tabCont.agendas = [[DBHandler getDB] getAllAgendas];
+    }
+    else{
+        tabCont.agendas = [[DBHandler getDB] getAllMyAgendas];
+    }
+    
+    [sessionsList removeAllObjects];
+    AgendaDTO *firstDayAgenda = tabCont.agendas[0];
+    [sessionsList addObjectsFromArray:firstDayAgenda.sessions];
+    NSLog(@"=====DAY 1 SESSIONS: %i", firstDayAgenda.sessions.count);
+    
+    [self.tableView reloadData];
+    [refreshControl endRefreshing];
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{

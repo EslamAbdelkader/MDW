@@ -11,7 +11,7 @@
         <!--Login-->
         <scene sceneID="osa-lZ-YLy">
             <objects>
-                <viewController title="Login" id="ctv-tg-dYi" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginViewController" title="Login" id="ctv-tg-dYi" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qLw-HY-eQt"/>
                         <viewControllerLayoutGuide type="bottom" id="tbz-iJ-8ai"/>
@@ -373,6 +373,9 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Day 1" image="firstDay" id="bbq-41-Rj4"/>
+                    <connections>
+                        <outlet property="tableView" destination="MMj-90-oTi" id="Krm-u0-UnM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SYR-UW-x8m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -494,7 +497,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="78"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JEX-wk-lMb" id="Idi-am-mb2">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="77.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="78"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICV-d9-9CA">
@@ -650,16 +653,16 @@
         <scene sceneID="1IJ-MH-O7U">
             <objects>
                 <tableViewController storyboardIdentifier="ExhibitorsView" id="IxO-az-IrL" customClass="ExhibitorsViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="78" sectionHeaderHeight="28" sectionFooterHeight="28" id="K3a-pF-itv">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="71" sectionHeaderHeight="28" sectionFooterHeight="28" id="K3a-pF-itv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExhibitorCell" rowHeight="78" id="CYR-lL-VfW">
-                                <rect key="frame" x="0.0" y="28" width="320" height="78"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExhibitorCell" rowHeight="71" id="CYR-lL-VfW">
+                                <rect key="frame" x="0.0" y="28" width="320" height="71"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CYR-lL-VfW" id="mIY-1Y-Ye2">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="77.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="71"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hAQ-N2-2pW">
@@ -669,8 +672,8 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="exihiptors" translatesAutoresizingMaskIntoConstraints="NO" id="8Ts-fm-9eQ">
-                                            <rect key="frame" x="18" y="6" width="64" height="60"/>
+                                        <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="speaker" translatesAutoresizingMaskIntoConstraints="NO" id="d1Z-2q-3hX">
+                                            <rect key="frame" x="22" y="6" width="64" height="60"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                     </subviews>
@@ -905,6 +908,9 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Day 2" image="secondDay" id="nNH-Up-KQv"/>
+                    <connections>
+                        <outlet property="tableView" destination="Fqc-a3-1Et" id="QoH-zu-GKg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oyv-Xd-1EB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -978,6 +984,9 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Day 3" image="thirdDay" id="Mwi-jN-fEc"/>
+                    <connections>
+                        <outlet property="tableView" destination="rrh-8G-Ed6" id="UuQ-yY-72e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vzo-8Y-vR9" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationItem id="0p9-7H-4mN">

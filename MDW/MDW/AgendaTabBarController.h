@@ -16,4 +16,6 @@
 
 @property NSString *myTitle;
 
+@property NSString *agendaType;
+
 @end

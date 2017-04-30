@@ -15,7 +15,10 @@
     [super viewDidLoad];
     
     //Or My Agenda, depending on the segue
-    self.title = _myTitle;
+    //self.title = _myTitle;
+    NSLog(@"----------------------------------------TABCONT: %@", _myTitle);
+    NSLog(@"----------------------------------------TABCONT: %@", _agendaType);
+    NSLog(@"----------------------------------------TABCONT: %i", _agendas.count);
     
     SWRevealViewController *revealViewController = self.revealViewController;
     if ( revealViewController )

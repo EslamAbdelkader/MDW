@@ -11,9 +11,13 @@
 #import "SessionDetailsViewController.h"
 #import "AgendaTabBarController.h"
 #import "AgendaDTO.h"
+#import "WebServiceDataProvider.h"
+#import "DBHandler.h"
 
 @implementation DayThreeViewController{
     NSMutableArray *sessionsList;
+    UIRefreshControl *refreshControl;
+    AgendaTabBarController *tabCont;
 }
 
 -(void) viewDidLoad{
@@ -21,9 +25,16 @@
     
     [self.storyboard instantiateViewControllerWithIdentifier:@"dayThreeView"];
     
+    refreshControl = [[UIRefreshControl alloc] init];
+    NSAttributedString *text = [[NSAttributedString alloc]initWithString:@"Refreshing.."];
+    [refreshControl setAttributedTitle:text];
+    [refreshControl setBackgroundColor:[UIColor orangeColor]];
+    [refreshControl addTarget:self action:@selector(refreshAgenda) forControlEvents:UIControlEventValueChanged];
+    [self.tableView  addSubview:refreshControl];
+    
     sessionsList = [NSMutableArray new];
     
-    AgendaTabBarController *tabCont = self.tabBarController;
+    tabCont = self.tabBarController;
     AgendaDTO *thirdDayAgenda = tabCont.agendas[2];
     NSLog(@"=====DAY 3 SESSIONS: %i", thirdDayAgenda.sessions.count);
     [sessionsList addObjectsFromArray:thirdDayAgenda.sessions];
@@ -34,6 +45,31 @@
     [self.view sendSubviewToBack:bgImageView];
     //opaque is set to false, bg is set to clearcolor
     
+}
+
+-(void) refreshAgenda{
+    //get sessions from service
+    [WebServiceDataProvider getAgendasIntoViewController: self
+                               orLoginFromViewController:nil];
+}
+
+-(void) refreshTable{
+    NSLog(@"----------------------------------------%@", tabCont.agendaType);
+    if ([tabCont.agendaType isEqual:@"agenda"] == YES) {
+        AgendaDTO *thirdDayAgenda = [[DBHandler getDB] getDay3Agenda];
+        [sessionsList addObjectsFromArray:thirdDayAgenda.sessions];
+    }
+    else{
+        AgendaDTO *thirdDayAgenda = [[DBHandler getDB] getDay3MyAgenda];
+        [sessionsList addObjectsFromArray:thirdDayAgenda.sessions];
+    }
+    
+    [sessionsList removeAllObjects];
+    AgendaDTO *thirdDayAgenda = tabCont.agendas[2];
+    NSLog(@"=====DAY 3 SESSIONS: %i", thirdDayAgenda.sessions.count);
+    [sessionsList addObjectsFromArray:thirdDayAgenda.sessions];
+    [self.tableView reloadData];
+    [refreshControl endRefreshing];
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{

@@ -14,6 +14,7 @@
 #import "SpeakersViewController.h"
 #import "ProfileTabBarController.h"
 #import "AttendeeDTO.h"
+#import "ViewController.h"
 
 @interface SidebarTableViewController ()
 
@@ -79,13 +80,15 @@
     if ([segue.identifier isEqualToString:@"agendaSeg"]) {
         UINavigationController *navController = segue.destinationViewController;
         AgendaTabBarController *agendaController = [navController childViewControllers].firstObject;
-        agendaController.title = @"Agenda";
+        agendaController.myTitle = @"Agenda";
+        agendaController.agendaType = @"agenda";
         agendaController.agendas = [[DBHandler getDB] getAllAgendas];
     }
     else if ([segue.identifier isEqualToString:@"myAgendaSeg"]) {
         UINavigationController *navController = segue.destinationViewController;
         AgendaTabBarController *agendaController = [navController childViewControllers].firstObject;
         agendaController.myTitle = @"My Agenda";
+        agendaController.agendaType = @"myAgenda";
         agendaController.agendas = [[DBHandler getDB] getAllMyAgendas];
     }
     else if ([segue.identifier isEqualToString:@"speakersSeg"]) {
@@ -121,7 +124,15 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    ViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"loginViewController"];
+    
     switch (indexPath.row){
+        case 6:
+            [userDefaults removeObjectForKey:@"user"];
+            [self presentViewController:vc animated:YES completion:nil];
+            break;
         case 7:
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://jets.iti.gov.eg"]];
     }

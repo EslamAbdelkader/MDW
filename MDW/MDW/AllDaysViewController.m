@@ -11,10 +11,13 @@
 #import "SessionDetailsViewController.h"
 #import "AgendaTabBarController.h"
 #import "AgendaDTO.h"
+#import "WebServiceDataProvider.h"
+#import "DBHandler.h"
 
 @implementation AllDaysViewController{
     NSMutableArray *sessionsList;
     UIRefreshControl *refreshControl;
+    AgendaTabBarController *tabCont;
 }
 
 -(void) viewDidLoad{
@@ -32,10 +35,9 @@
     
     sessionsList = [NSMutableArray new];
     
-    AgendaTabBarController *tabCont = self.tabBarController;
+    tabCont = self.tabBarController;
     for( AgendaDTO * agenda in tabCont.agendas){
         [sessionsList addObjectsFromArray:agenda.sessions];
-        
     }
     
     UIImageView *bgImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background"]];
@@ -47,6 +49,23 @@
 
 -(void) refreshAgenda{
     //get sessions from service
+    [WebServiceDataProvider getAgendasIntoViewController: self
+        orLoginFromViewController:nil];
+}
+
+-(void) refreshTable{
+    NSLog(@"----------------------------------------%@", tabCont.agendaType);
+    if ([tabCont.agendaType isEqualToString:@"agenda"]) {
+        tabCont.agendas = [[DBHandler getDB] getAllAgendas];
+    }
+    else{
+        tabCont.agendas = [[DBHandler getDB] getAllMyAgendas];
+    }
+
+    [sessionsList removeAllObjects];
+    for( AgendaDTO * agenda in tabCont.agendas){
+        [sessionsList addObjectsFromArray:agenda.sessions];
+    }
     [self.tableView reloadData];
     [refreshControl endRefreshing];
 }

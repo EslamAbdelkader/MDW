@@ -67,9 +67,9 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    SpeakerDTO *ex = [_exhibitors objectAtIndex:indexPath.row];
-    //NSString *url = ex.
-    //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+    ExhibitorDTO *ex = [_exhibitors objectAtIndex:indexPath.row];
+    NSString *url = ex.companyUrl;
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
