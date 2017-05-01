@@ -90,6 +90,7 @@
         agendaController.myTitle = @"My Agenda";
         agendaController.agendaType = @"myAgenda";
         agendaController.agendas = [[DBHandler getDB] getAllMyAgendas];
+        NSLog(@"%@",agendaController);
     }
     else if ([segue.identifier isEqualToString:@"speakersSeg"]) {
         UINavigationController *navController = segue.destinationViewController;

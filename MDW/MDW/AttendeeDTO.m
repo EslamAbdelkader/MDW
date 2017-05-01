@@ -18,8 +18,8 @@
     self.email=[aDecoder decodeObjectForKey:@"email"];
     self.countryName=[aDecoder decodeObjectForKey:@"countryName"];
     self.cityName=[aDecoder decodeObjectForKey:@"cityName"];
-//    self.mobiles=[aDecoder decodeObjectForKey:@"mobiles"];
-//    self.phones=[aDecoder decodeObjectForKey:@"phones"];
+    self.mobiles=[aDecoder decodeObjectForKey:@"mobiles"];
+    self.phones=[aDecoder decodeObjectForKey:@"phones"];
     self.code=[aDecoder decodeObjectForKey:@"code"];
     self.companyName=[aDecoder decodeObjectForKey:@"companyName"];
     self.title=[aDecoder decodeObjectForKey:@"title"];
@@ -38,8 +38,8 @@
     [aCoder encodeObject:_email forKey:@"email"];
     [aCoder encodeObject:_countryName forKey:@"countryName"];
     [aCoder encodeObject:_cityName forKey:@"cityName"];
-//    [aCoder encodeObject:_mobiles forKey:@"mobiles"];
-//    [aCoder encodeObject:_phones forKey:@"phones"];
+    [aCoder encodeObject:_mobiles forKey:@"mobiles"];
+    [aCoder encodeObject:_phones forKey:@"phones"];
     [aCoder encodeObject:_code forKey:@"code"];
     [aCoder encodeObject:_companyName forKey:@"companyName"];
     [aCoder encodeObject:_title forKey:@"title"];

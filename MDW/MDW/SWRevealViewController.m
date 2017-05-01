@@ -1830,7 +1830,7 @@ NSString * const SWSegueRightIdentifier = @"sw_right";
         AgendaTabBarController *agendaController = [navController childViewControllers].firstObject;
         agendaController.title = @"Agenda";
         agendaController.agendas = [[DBHandler getDB] getAllAgendas];
-        
+        NSLog(@"%@",agendaController);
     }
     else if ( [identifier isEqualToString:SWSegueRearIdentifier] )
         operation = SWRevealControllerOperationReplaceRearController;
