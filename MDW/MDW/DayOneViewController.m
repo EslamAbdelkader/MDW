@@ -13,12 +13,12 @@
 #import "AgendaDTO.h"
 #import "WebServiceDataProvider.h"
 #import "DBHandler.h"
+#import "SidebarTableViewController.h"
 
 @implementation DayOneViewController{
     NSMutableArray *sessionsList;
     UIRefreshControl *refreshControl;
     AgendaTabBarController *tabCont;
-    NSString *agendaType;
 }
 
 -(void) viewDidLoad{
@@ -37,8 +37,7 @@
     
     tabCont = self.tabBarController;
     AgendaDTO *firstDayAgenda = tabCont.agendas[0];
-    agendaType = tabCont.agendaType;
-    
+
     NSLog(@"=====DAY 1 SESSIONS: %i", firstDayAgenda.sessions.count);
     [sessionsList addObjectsFromArray:firstDayAgenda.sessions];
     
@@ -57,12 +56,13 @@
 }
 
 -(void) refreshTable{
-    NSLog(@"----------------------------------------%@", agendaType);
-    if ([agendaType isEqualToString:@"agenda"]) {
+    NSLog(@"----------------------------------------%i", [SidebarTableViewController getAgendaType]);
+    if ([SidebarTableViewController getAgendaType] == 0) {
         tabCont.agendas = [[DBHandler getDB] getAllAgendas];
     }
     else{
         tabCont.agendas = [[DBHandler getDB] getAllMyAgendas];
+        self.title = @"My Agenda";
     }
     
     [sessionsList removeAllObjects];

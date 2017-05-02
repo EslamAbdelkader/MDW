@@ -14,8 +14,4 @@
 
 @property NSMutableArray *agendas;
 
-@property NSString *myTitle;
-
-@property NSString *agendaType;
-
 @end

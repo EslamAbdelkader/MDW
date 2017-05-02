@@ -13,6 +13,7 @@
 #import "AgendaDTO.h"
 #import "WebServiceDataProvider.h"
 #import "DBHandler.h"
+#import "SidebarTableViewController.h"
 
 @implementation AllDaysViewController{
     NSMutableArray *sessionsList;
@@ -54,12 +55,13 @@
 }
 
 -(void) refreshTable{
-    NSLog(@"----------------------------------------%@", tabCont.agendaType);
-    if ([tabCont.agendaType isEqualToString:@"agenda"]) {
+    NSLog(@"----------------------------------------%i", [SidebarTableViewController getAgendaType]);
+    if ([SidebarTableViewController getAgendaType] == 0) {
         tabCont.agendas = [[DBHandler getDB] getAllAgendas];
     }
     else{
         tabCont.agendas = [[DBHandler getDB] getAllMyAgendas];
+        self.title = @"My Agenda";
     }
 
     [sessionsList removeAllObjects];
@@ -90,18 +92,23 @@
     UILabel *title = [cell viewWithTag:2];
     UILabel *location = [cell viewWithTag:3];
     UILabel *time = [cell viewWithTag:4];
+    UILabel *day = [cell viewWithTag:5];
     
     if ([currSession.sessionType isEqualToString:@"Break"]) {
         [img setImage:[UIImage imageNamed:@"breakicon"]];
+        day.hidden = YES;
     }
     else if([currSession.sessionType isEqualToString:@"Session"]){
         [img setImage:[UIImage imageNamed:@"session"]];
+        day.hidden = NO;
+    }
+    else if([currSession.sessionType isEqualToString:@"Hackathon"]){
+        [img setImage:[UIImage imageNamed:@"hacathon"]];
+        day.hidden = NO;
     }
     else if([currSession.sessionType isEqualToString:@"Workshop"]){
         [img setImage:[UIImage imageNamed:@"workshop"]];
-    }
-    else{
-        //handle
+        day.hidden = NO;
     }
     
     NSString * htmlString = currSession.name;
@@ -131,6 +138,14 @@
     str = [str stringByAppendingString:formattedEnd];
     
     time.text = str;
+    
+    if(![currSession.sessionType isEqualToString:@"Break"]){
+        [dateFormatter setDateStyle:NSDateFormatterNoStyle];
+        [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+        [dateFormatter setDateFormat:@"dd"];
+        NSString *formattedDay = [dateFormatter stringFromDate:start];
+        day.text = formattedDay;
+    }
     
     return cell;
 }

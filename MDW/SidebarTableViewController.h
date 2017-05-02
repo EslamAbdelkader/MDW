@@ -10,6 +10,6 @@
 
 @interface SidebarTableViewController : UITableViewController
 
-
++ (int) getAgendaType;
 
 @end

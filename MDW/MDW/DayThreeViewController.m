@@ -13,6 +13,7 @@
 #import "AgendaDTO.h"
 #import "WebServiceDataProvider.h"
 #import "DBHandler.h"
+#import "SidebarTableViewController.h"
 
 @implementation DayThreeViewController{
     NSMutableArray *sessionsList;
@@ -54,14 +55,13 @@
 }
 
 -(void) refreshTable{
-    NSLog(@"----------------------------------------%@", tabCont.agendaType);
-    if ([tabCont.agendaType isEqual:@"agenda"] == YES) {
-        AgendaDTO *thirdDayAgenda = [[DBHandler getDB] getDay3Agenda];
-        [sessionsList addObjectsFromArray:thirdDayAgenda.sessions];
+    NSLog(@"----------------------------------------%i", [SidebarTableViewController getAgendaType]);
+    if ([SidebarTableViewController getAgendaType] == 0) {
+        tabCont.agendas = [[DBHandler getDB] getAllAgendas];
     }
     else{
-        AgendaDTO *thirdDayAgenda = [[DBHandler getDB] getDay3MyAgenda];
-        [sessionsList addObjectsFromArray:thirdDayAgenda.sessions];
+        tabCont.agendas = [[DBHandler getDB] getAllMyAgendas];
+        self.title = @"My Agenda";
     }
     
     [sessionsList removeAllObjects];
