@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "AttendeeDTO.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,22 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    UIStoryboard* main = [UIStoryboard storyboardWithName:@"Main"
+                                                   bundle:[NSBundle mainBundle]];
+    UIViewController *viewContr;
+    
+    //Checking for NSUserDefaults
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSData* userData = [userDefaults objectForKey:@"user"];
+    if(userData != nil){
+    viewContr= [main instantiateViewControllerWithIdentifier:@"revealController"];
+    }else{
+        viewContr = [main instantiateViewControllerWithIdentifier:@"loginViewController"];
+    }
+    
+    self.window.rootViewController = viewContr;
+    [self.window makeKeyAndVisible];
+
     return YES;
 }
 

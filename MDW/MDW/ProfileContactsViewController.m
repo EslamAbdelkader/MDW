@@ -23,7 +23,7 @@
     attendee = profCont.attendee;
     
     _emailLbl.text = attendee.email;
-    //_phoneLbl.text = attendee.
+    _phoneLbl.text = attendee.mobiles.firstObject;
     
     NSString *encodedData=[ NSString stringWithFormat:@"BEGIN:VCARD\nVERSION:3.0\nN:%@;%@\nFN:\nORG:%@\nTITLE:%@\nTEL;CELL:%@\nEMAIL;WORK;INTERNET:%@\nURL:\nEND:VCARD", attendee.firstName, attendee.lastName, attendee.companyName, attendee.title, @"123", attendee.email];
 

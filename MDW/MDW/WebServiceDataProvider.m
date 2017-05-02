@@ -315,6 +315,8 @@
                 user.code = [result objectForKey:@"code"];
                 user.title = [result objectForKey:@"title"];
                 user.gender = [result objectForKey:@"gender"];
+                user.phones = [result objectForKey:@"phones"];
+                user.mobiles = [result objectForKey:@"mobiles"];
                 //                user.birthDate = [[result objectForKey:@"birthDate"]longLongValue];
                 NSLog(@"%@",user);
                 
