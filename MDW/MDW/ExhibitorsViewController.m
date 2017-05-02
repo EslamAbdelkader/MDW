@@ -13,13 +13,22 @@
 #import "WebServiceDataProvider.h"
 #import "DBHandler.h"
 
-@implementation ExhibitorsViewController
+@implementation ExhibitorsViewController{
+    UIRefreshControl *refreshControl;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.storyboard instantiateViewControllerWithIdentifier:@"ExhibitorsView"];
     
     self.title = @"Exhibitors";
+    
+    refreshControl = [[UIRefreshControl alloc] init];
+    NSAttributedString *text = [[NSAttributedString alloc]initWithString:@"Refreshing.."];
+    [refreshControl setAttributedTitle:text];
+    [refreshControl setBackgroundColor:[UIColor orangeColor]];
+    [refreshControl addTarget:self action:@selector(refreshExhibitors) forControlEvents:UIControlEventValueChanged];
+    [self.tableView  addSubview:refreshControl];
     
     SWRevealViewController *revealViewController = self.revealViewController;
     if ( revealViewController )
@@ -34,6 +43,16 @@
         [self.view sendSubviewToBack:bgImageView];
     }
     
+}
+
+-(void) refreshExhibitors{
+    [WebServiceDataProvider getExhibitorsIntoViewController:self];
+}
+
+-(void) refreshTable{
+    _exhibitors = [[DBHandler getDB] getAllExhibitors];
+    [self.tableView reloadData];
+    [refreshControl endRefreshing];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -76,14 +95,5 @@
     [self refreshTable];
     [WebServiceDataProvider getExhibitorsIntoViewController:self];
 }
-
--(void)refreshTable{
-    _exhibitors = [[DBHandler getDB] getAllExhibitors];
-    [self.tableView reloadData];
-}
-
-
-
-
 
 @end

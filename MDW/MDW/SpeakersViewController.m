@@ -14,12 +14,22 @@
 #import "WebServiceDataProvider.h"
 #import "DBHandler.h"
 
-@implementation SpeakersViewController
+@implementation SpeakersViewController{
+    UIRefreshControl *refreshControl;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.title = @"Speakers";
+    
+    refreshControl = [[UIRefreshControl alloc] init];
+    NSAttributedString *text = [[NSAttributedString alloc]initWithString:@"Refreshing.."];
+    [refreshControl setAttributedTitle:text];
+    [refreshControl setBackgroundColor:[UIColor orangeColor]];
+    [refreshControl addTarget:self action:@selector(refreshSpeakers) forControlEvents:UIControlEventValueChanged];
+    [self.tableView  addSubview:refreshControl];
+
     
     SWRevealViewController *revealViewController = self.revealViewController;
     if ( revealViewController )
@@ -34,6 +44,16 @@
         [self.view sendSubviewToBack:bgImageView];
     }
     
+}
+
+-(void) refreshSpeakers{
+    [WebServiceDataProvider getSpeakersIntoViewController:self];
+}
+
+-(void) refreshTable{
+    _speakers = [[DBHandler getDB] getAllSpeakers];
+    [self.tableView reloadData];
+    [refreshControl endRefreshing];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -80,11 +100,5 @@
     [self refreshTable];
     [WebServiceDataProvider getSpeakersIntoViewController:self];
 }
-
--(void)refreshTable{
-    _speakers = [[DBHandler getDB] getAllSpeakers];
-    [self.tableView reloadData];
-}
-
 
 @end

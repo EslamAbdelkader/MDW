@@ -24,7 +24,6 @@
 -(void) viewDidLoad{
     [super viewDidLoad];
     
-    self.title = @"All Days";
     [self.storyboard instantiateViewControllerWithIdentifier:@"allDaysView"];
     
     refreshControl = [[UIRefreshControl alloc] init];
@@ -50,6 +49,7 @@
 
 -(void) refreshAgenda{
     //get sessions from service
+    //[[DBHandler getDB] dropDatabase];
     [WebServiceDataProvider getAgendasIntoViewController: self
         orLoginFromViewController:nil];
 }
@@ -61,7 +61,6 @@
     }
     else{
         tabCont.agendas = [[DBHandler getDB] getAllMyAgendas];
-        self.title = @"My Agenda";
     }
 
     [sessionsList removeAllObjects];

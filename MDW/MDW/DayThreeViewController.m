@@ -61,7 +61,6 @@
     }
     else{
         tabCont.agendas = [[DBHandler getDB] getAllMyAgendas];
-        self.title = @"My Agenda";
     }
     
     [sessionsList removeAllObjects];
