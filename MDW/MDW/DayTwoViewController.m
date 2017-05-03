@@ -144,6 +144,8 @@
     [self.navigationController pushViewController:detailsView animated:YES];
 }
 
-
+-(void)viewWillAppear:(BOOL)animated{
+    [self refreshTable];
+}
 
 @end

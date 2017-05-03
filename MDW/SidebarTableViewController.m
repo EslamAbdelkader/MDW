@@ -86,12 +86,14 @@ static int agendaType = 0;
     if ([segue.identifier isEqualToString:@"agendaSeg"]) {
         UINavigationController *navController = segue.destinationViewController;
         AgendaTabBarController *agendaController = [navController childViewControllers].firstObject;
+        agendaController.title = @"Agenda";
         agendaController.agendas = [[DBHandler getDB] getAllAgendas];
         agendaType = 0;
     }
     else if ([segue.identifier isEqualToString:@"myAgendaSeg"]) {
         UINavigationController *navController = segue.destinationViewController;
         AgendaTabBarController *agendaController = [navController childViewControllers].firstObject;
+        agendaController.title = @"My Agenda";
         agendaController.agendas = [[DBHandler getDB] getAllMyAgendas];
         agendaType = 1;
     }

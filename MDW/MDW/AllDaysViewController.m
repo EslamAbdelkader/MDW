@@ -159,6 +159,8 @@
 
 
 
-
+-(void)viewWillAppear:(BOOL)animated{
+    [self refreshTable];
+}
 
 @end

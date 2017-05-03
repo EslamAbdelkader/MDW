@@ -26,7 +26,7 @@
         [self.view addSubview:bgImageView];
         [self.view sendSubviewToBack:bgImageView];
     }
-    
+//    self.title = @"Agenda";
 }
 
 - (void)didReceiveMemoryWarning {
